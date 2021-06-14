@@ -11,6 +11,42 @@
             padding: 0;
             list-style: none;
         }
+        
+        .header{
+            width: 100%;
+            /* width: 1263px;           */
+            opacity: 0.9;
+            position: fixed;
+            background-color: white;
+            border: 1px solid rgb(224, 223, 223);
+            display: flex;
+            
+        }      
+        .logo a img{            
+            width: 46px;
+            height: 16px;    
+            padding: 25px;        
+        }      
+        ul{
+            display: flex;
+            margin: auto;
+            padding-right: 120px;
+        }
+       .header ul li a{
+           text-decoration: none;
+           padding: 0 40px;
+           font-size: 16px;
+           color: black;
+           font-weight:bold;
+           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+       }
+       .banner{
+           width: 100%;
+       }
+       .banner img{
+           width: 100%;
+       }
+       
         .item-group{
             width: 960px;
             margin: auto;            
@@ -53,6 +89,21 @@
     </style>
 </head>
 <body>
+
+   
+    <div class="header">
+        <div class="logo"><a href="https://line.me/"><img src="icon.png" alt=""></a></div>
+
+        <ul>
+        <li><a href="#">Life on LINE</a></li>
+        <li><a href="#">通訊軟體</a></li>
+        <li><a href="#">服務總覽</a></li>
+        </ul>
+    </div>
+
+    <div class="banner">
+        <img src="biglogo.png" alt="">
+    </div>
        <div class="item-group">
            <div class="item">
                <div class="pic">
@@ -113,5 +164,6 @@
                </div>
            </div>
        </div>
+    
 </body>
 </html>
