@@ -4,22 +4,23 @@
     z-index: 2;
 }
 .header-top{   
-    padding: 0 10px;
+    padding: 5px 10px;
     background-color: #00142D;        
 }
 .aside{
     display: flex;
-    justify-content: flex-end;
-    /* font-size: 0; */
+    justify-content: flex-end;    
 }
 .aside a{
     display: inline-block;
     line-height: 30px;   
     color: #FFFFFF; 
-    padding: 0 15px;
+    padding: 0 13px;
 }
 .aside a i{
+    border-right: 1px solid white;
     font-size: 16px;
+    padding-right: 13px;
 }
 .aside nav a{
     font-size: 14px;
@@ -54,12 +55,22 @@
     border-bottom: 4px solid #0061FF;
     transition:.5s;
 }
-.btn{
-    margin: 0 80px;    
+.link-free a{   
+    background-color: #0061ff;
+    border-radius: 30px;     
+    color: white;
+    text-decoration: none;
+    padding:13px 20px;
+    line-height: 26px;    
+    margin-left: 100px;  
+    font-size: 13px;
+}
+.link-free a:hover{
+    background-color: #0747a6;
 }
 .banner{
     background-image: url("02.png");    
-    height: 1014px;    
+    height:700px;        
     position: relative;     
 }
 .banner h1{   
@@ -75,14 +86,39 @@
 .banner h2{
     line-height: 1.9;
     font-size: 17px;
-    font-weight: bold;
-    padding-bottom: 50px;
+    font-weight: bold;    
 }
 .banner-title{
     position: absolute;
     top: 0;    
     color: white;
-    padding: 300px 0 0 40px;
+    padding: 200px 0 0 40px;
+}
+.input-email {
+    background-color: unset;
+    border: none;    
+    padding-right:20px;    
+    width: 300px;
+    color: white;
+    border-bottom: 1px solid white;    
+    outline: none;
+    font-size: 15px;
+}
+::placeholder{
+    color: white;
+}
+button{
+    border-radius: 30px;
+    background-color: #0061ff;
+    cursor: pointer; 
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    font-size: 18px;
+    margin: 0 20px;
+}
+button:hover{
+    background-color: #0747a6;
 }
 .title{
     text-align: center;         
@@ -155,7 +191,8 @@
     color: #0061FF;
 }
 .features-service{
-    background-color: #f4f5f7;     
+    background-color: #f4f5f7;   
+    padding-bottom: 80px;  
 }
 .service-group{    
     display: flex;
@@ -196,16 +233,14 @@
 .brand-group{
     display: flex;
     justify-content: center;
-    justify-content: space-evenly;    
+    justify-content: space-evenly; 
+    text-align: center;   
 }
 .brand-group img{
-    padding: 0 40px;
+    padding: 15px 40px;
 }
-.special img{
-    border-bottom: 4px solid #0061ff;
-    padding-bottom: 30px;
-    padding-left:40px;
-    padding-right:40px;
+.brand{
+    width: 230px;
 }
 .brand:hover{
     border-bottom: 4px solid #0061ff;
@@ -243,8 +278,7 @@
     width: 100%;
 }
 .footer{
-    width: 100%;
-    /* height: 400px; */
+    width: 100%;    
     background-color: #172b4d;       
 }
 .footer-link{
@@ -254,9 +288,18 @@
 }
 .footer-link h4{
     margin-top: 60px;
+    padding-bottom: 40px;
     color: white;
     font-size: 40px;
     line-height: 1.5;    
+}
+.footer-link a{
+    background-color: #0061ff;
+    border-radius: 30px;     
+    color: white;
+    text-decoration: none;
+    padding:14px 120px;     
+    font-size: 15px;
 }
 .footer-list{
     display: flex;
@@ -280,6 +323,7 @@
 }
 .footer-bottom{
     display: flex;
+    align-items: center;
     justify-content: center;
     justify-content: space-around;
     padding: 50px 0;
@@ -299,11 +343,22 @@
     color: #0061ff;
 }
 .footer-bottom-icon a{
-    color: white;
-    padding: 0 10px;
-    font-size: 20px;
+    display: inline-block;
+    width: 37px;
+    height: 37px;
+    background-color: #172b4d;
+    border-radius: 50%;
+    font-size:25px;
+    margin: 0 15px;    
+    text-decoration: none;
+    color: #fff;
+    text-align: center;      
+}
+.footer-bottom-icon a:hover{
+    color:#0061ff ;
 }
 .footer-bottom-info p{
+    font-size: 14px;
+    line-height: 1.6;
     color:#748094;
 }
-
