@@ -222,28 +222,28 @@ button:hover{
     padding-top:88px;
     margin-bottom: 30px;
 }
-.recommend h4{
+.recommend h2{
     font-size: 35px;
     text-align: center; 
     padding-bottom: 20px;  
 }
-.recommend h4 span{
+.recommend h2 span{
     color: #0061ff;
 }
 .brand-group{
     display: flex;
     justify-content: center;
-    justify-content: space-evenly; 
-    text-align: center;   
+    justify-content: space-evenly;    
 }
 .brand-group img{
     padding: 15px 40px;
 }
 .brand{
     width: 230px;
+    border-bottom: 4px solid transparent;
 }
 .brand:hover{
-    border-bottom: 4px solid #0061ff;
+    border-bottom: 4px solid #0061ff  ;
 }
 .other{
     display: flex;
@@ -278,15 +278,19 @@ button:hover{
     width: 100%;
 }
 .footer{
-    width: 100%;    
+    /* width: 100%;     */
     background-color: #172b4d;       
 }
 .footer-link{
+    width: 100%;    
     margin-top: 60px;
     padding:40px 0 160px 20px;
-    
+    box-sizing: border-box;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;    
 }
-.footer-link h4{
+.footer-link h2{
     margin-top: 60px;
     padding-bottom: 40px;
     color: white;
