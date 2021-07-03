@@ -1,0 +1,119 @@
+/* banner */
+.banner{
+    background-image: url("02.png"); 
+    margin-bottom: 80px;
+}
+.main{
+    width: 100%;
+    padding-bottom:20% ;
+}
+.text h1{
+    font-size: 40px;
+    line-height: 1.5;
+    font-weight: bold;  
+    color: white;  
+    margin-bottom: 30px;
+}
+.text h1 span{
+    color:#00c66a;
+    
+}
+.text p{
+    line-height: 1.9;
+    font-size: 18.5px;
+    font-weight: bold;  
+    color: white; 
+    margin-bottom: 50px;
+}
+.input-email {
+    background-color: unset;
+    border: none;    
+    padding-right:20px;    
+    width: 300px;
+    color: white;
+    border-bottom: 1px solid white;    
+    outline: none;
+    font-size: 15px;
+}
+::placeholder{
+    color: white;
+}
+button{
+    border-radius: 30px;
+    background-color: #0061ff;
+    cursor: pointer; 
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    font-size: 18px;
+    margin: 0 20px;
+}
+button:hover{
+    background-color: #0747a6;
+}
+/* 圖文 */
+.pic img{
+    width: 100%;
+    vertical-align: middle;
+}
+@media screen and (min-width:768px){
+    .row{
+        align-items: center;   
+    }
+}
+.row:nth-child(even){
+    flex-direction: row-reverse;
+}
+.main.row:nth-child(1){
+    flex-direction: row-reverse;
+}
+.title-txt h2{
+    font-size: 35px;
+    font-weight: bold;
+    color: #000000;    
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+.title-txt{
+    text-align: center;
+   
+}
+.title-txt p{
+    font-size: 17px;
+    color: #324255;  
+    line-height: 1.7; 
+    width: 100%;
+}
+.txt h3{
+    font-size: 35px;
+    font-weight: bold;
+}
+.txt i{
+    color:rgb(243, 197, 44);
+    font-size: 30px;    
+}
+.txt p{
+    font-size: 17px;
+}
+.txt h3{
+    line-height: 1.5;
+}
+.txt i,.txt p{
+    line-height: 2;
+}
+.item-group{
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+    border-bottom: 1px solid #e0e5e9;
+}
+.row li i{
+    color: #88a6ca;
+}
+.link a{
+    display: block;
+    text-decoration: none;
+    padding: 20px 0;
+    font-size: 17px;
+    color: #0061ff;
+}
+
