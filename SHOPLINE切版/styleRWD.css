@@ -1,7 +1,85 @@
+/* header-top */
+body{
+    padding-top: 70px;
+}
+header{
+   position: fixed;
+   width: 100%;   
+   top: 0;
+}
+.header-top{
+    padding: 0 20px;
+    background-color: #00142D;     
+}
+.aside{
+    text-align: right;
+}
+.aside a{
+    display: inline-block;
+    text-decoration: none;
+    margin: 5px;
+    color: white;
+}
+.aside a i{
+    margin-right: 15px;
+}
+.aside a:nth-child(1){
+    border-right: 1px solid white;
+}
+.aside a:hover{
+    color: #2684FF;
+}
+/* header-bottom */
+.header-bottom{
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+.header-bottom ul{
+    display: flex;
+}
+.header-bottom li a:hover{
+    color: #0061FF;
+}
+.logo img{
+    width: 160px;
+    height: 26px;  
+    margin: 0 30px;
+    padding: 20px 0;
+}
+.header-bottom li a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px 0;
+    margin: 0 10px;
+    color: #667281;
+}
+.link-free a{
+    background-color: #0061ff;
+    border-radius: 30px;     
+    color: white;
+    text-decoration: none;
+    padding:13px 20px;
+    line-height: 26px;    
+    margin-left: 100px;  
+    font-size: 13px;    
+}
+.link-free a:hover{
+    background-color: #0747a6;
+}
+
+@media screen and (max-width:1200px) {
+    .header-bottom ul,.aside,.link-free{
+        display: none;
+    }
+}
+
+
 /* banner */
 .banner{
     background-image: url("02.png"); 
     margin-bottom: 80px;
+    
 }
 .main{
     width: 100%;
@@ -50,6 +128,9 @@ button{
 }
 button:hover{
     background-color: #0747a6;
+}
+button{
+    padding: 20 auto 0;
 }
 /* 圖文 */
 .pic img{
