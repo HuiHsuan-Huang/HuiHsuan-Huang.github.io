@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            width: 300px;
+            padding: 20px 0;
+            margin: auto;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+        }       
+
+        .btn-num {
+            display: block;
+            margin: auto;
+            background-color: blue;
+            color: white;
+        }
+
+        input {
+            display: block;
+            margin: auto;
+            margin-bottom: 5px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            flex-wrap: wrap;
+            width: 140px;
+        }
+
+        .btn-group button {
+            width: 30px;
+            height: 30px;
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>0</p>
+        <p>~</p>
+        <p>100</p>
+    </div>
+    <button class="btn-num">產生數字</button>
+    <input type="text" value="">
+    <div class="btn-group">
+        <div class="btn" id="btn1">
+            <button disabled>1</button>
+        </div>
+        <div class="btn"  id="btn2">
+            <button disabled>2</button>
+        </div>
+        <div class="btn" id="btn3">
+            <button disabled>3</button>
+        </div>
+        <div class="btn" id="btn4">
+            <button disabled>4</button>
+        </div>
+        <div class="btn" id="btn5">
+            <button disabled>5</button>
+        </div>
+        <div class="btn" id="btn6">
+            <button disabled>6</button>
+        </div>
+        <div class="btn" id="btn7">
+            <button disabled>7</button>
+        </div>
+        <div class="btn" id="btn8">
+            <button disabled>8</button>
+        </div>
+        <div class="btn" id="btn9">
+            <button disabled>9</button>
+        </div>
+        <div class="btn" id="btnX">
+            <button disabled>X</button>
+        </div>
+        <div class="btn" id="btn0">
+            <button disabled>0</button>
+        </div>
+        <div class="btn" id="btnV">
+            <button disabled>V</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        
+       
+        //產生亂碼
+        let btnNum=document.querySelector(".btn-num"); 
+        let answer;
+        function getAnswer(){
+            answer = Math.floor(Math.random() * 101);
+        }
+
+        //設定數字btn1
+        let btn1=document.querySelector("#btn1");    
+        let input=document.querySelector("input");    
+        function one(){
+            input.value+="1";            
+        }
+        btn1.onclick=one;       
+        //btn2
+        let btn2=document.querySelector("#btn2");                   
+        function two(){
+            input.value+="2";
+
+        }        
+        btn2.onclick=two;
+        //btn3
+        let btn3=document.querySelector("#btn3");                   
+        function three(){
+            input.value+="3";
+        }        
+        btn3.onclick=three;
+        //btn4
+        let btn4=document.querySelector("#btn4");                   
+        function four(){
+            input.value+="4";
+        }        
+        btn4.onclick=four;
+        //btn5
+        let btn5=document.querySelector("#btn5");                   
+        function five(){
+            input.value+="5";
+        }        
+        btn5.onclick=five;
+        //btn6
+        let btn6=document.querySelector("#btn6");                   
+        function six(){
+            input.value+="6";
+        }        
+        btn6.onclick=six;
+        //btn7
+        let btn7=document.querySelector("#btn7");                   
+        function seven(){
+            input.value+="7";
+        }        
+        btn7.onclick=seven;
+        //btn8
+        let btn8=document.querySelector("#btn8");                   
+        function eight(){
+            input.value+="8";
+        }        
+        btn8.onclick=eight;
+        //btn9
+        let btn9=document.querySelector("#btn9");                   
+        function nine(){
+            input.value+="9";
+        }        
+        btn9.onclick=nine;
+        //btnX
+        let btnX=document.querySelector("#btnX");    
+        function clear(){
+            input.value="";
+        }     
+        btnX.onclick=clear;
+        //btn0
+        let btn0=document.querySelector("#btn0");                   
+        function zero(){
+            input.value+="0";
+        }        
+        btn0.onclick=zero;
+        //btnV      
+
+        //打開btn
+        function start(){            
+            document.querySelectorAll("button").forEach(item=>{
+                item.removeAttribute("disabled");
+            });
+            getAnswer();
+        }  
+        btnNum.onclick=start;
+        //V       
+        let btnV=document.querySelector("#btnV");             
+        let p1=document.querySelector("p:nth-child(1)")
+        let p3=document.querySelector("p:nth-child(3)")
+        let intInput;
+        function guess(){
+            intInput=parseInt(input.value);
+
+            if(intInput<parseInt(p1.innerText) || intInput > parseInt(p3.innerText)){
+                alert(`請輸入${p1.innerText}~${p3.innerText}的數`);
+                clear();
+                return;
+            }
+
+            if(intInput<answer){
+                p1.innerText=intInput;
+            }
+            if(intInput>answer){
+                p3.innerText=intInput;
+            }
+            if(intInput==answer){
+                alert("猜中了!");
+            }
+            
+            clear();
+        }
+        btnV.onclick=guess;
+
+    </script>
+</body>
+
+</html>
