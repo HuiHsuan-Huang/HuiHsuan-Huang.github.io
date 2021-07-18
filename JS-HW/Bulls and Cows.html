@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Bulls & Cows</title>
+  <style>
+    .btn-group {
+      width: 500px;
+      margin: 20px auto;
+    }
+
+    .grid {
+      width: 500px;
+      height: 50px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      margin: 5px auto;
+    }
+
+    .input-group {
+      width: 500px;
+      margin: auto;
+      padding: 20px 0;
+    }
+
+    .grid span {
+      margin: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- btn -->
+  <div class="btn-group d-flex" role="group" aria-label="Basic outlined example">
+    <button type="button" class="btn btn-outline-primary" id="btn-start">開始</button>
+    <button type="button" class="btn btn-outline-primary" id="btn-again" onclick="clean()">放棄重來</button>
+    <button type="button" class="btn btn-outline-primary" id="btn-answer">看答案</button>
+  </div>
+  <!-- grid -->
+  <div class="grid-group">
+    <!-- <div class="grid">
+      <span class="badge bg-danger">Danger</span>
+      <span>1234</span>
+    </div>
+    <div class="grid"></div>
+    <div class="grid"></div>
+    <div class="grid"></div>
+    <div class="grid"></div> -->
+  </div>
+  <!-- guess -->
+  <div class="input-group mb-3">
+    <span class="input-group-text">猜答案</span>
+    <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)">
+    <button type="button" class="btn btn-primary" id="btn-guess" disabled>猜!</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script>
+    let btnStart = document.querySelector("#btn-start");
+    let btnGuess = document.querySelector("#btn-guess");
+    let btnAgain = document.querySelector("#btn-again");
+    let btnAnswer = document.querySelector("#btn-answer");
+    let input = document.querySelector("input");
+    let inputArray = new Array(4);
+    let inputValue;
+    let numArray;
+    let result;
+    let A = 0;
+    let B = 0;
+    //開始(產生亂數、(猜)btn打開)  
+    function start() {
+      btnGuess.removeAttribute("disabled");
+      getNumber();
+    }
+    btnStart.onclick = start;
+    //放棄重來    
+    function clean() {
+      document.querySelector(".grid-group").innerHTML = "";
+      btnGuess.setAttribute("disabled", true);
+      input.value = "";
+    }
+    //看答案
+    function getAnswer() {
+      alert(`答案是${numArray}`);
+    }
+    btnAnswer.onclick = getAnswer;
+    //猜數字
+    //step1.亂數放陣列 
+    function getNumber() {
+      let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; //原有陣列放全部數字
+
+      numArray = []; //開另一個空陣列
+      let ranNum = 4;
+      //取亂數
+      for (let i = 0; i < ranNum; i++) {
+        let ran = Math.floor(Math.random() * arr.length);
+        numArray.push(arr.splice(ran, 1)[0]); //舊陣列去除數字轉移到新陣列
+      };
+    }
+    //step2 猜的數字放陣列、找交集      
+    function guess() {
+      inputValue = input.value;
+      inputArray = inputValue.split(''); //["1","2","3","4"]字串
+      inputArray = inputArray.map(i => Number(i)); //組成新陣列[1,2,3,4]數字       
+      //找亂數陣列與猜數字陣列的數字交集
+      result = numArray.filter((e) => {
+        return inputArray.indexOf(e) > -1
+      })
+      //找位置是否相等 判斷AB
+      for (let i = 0; i < result.length; i++) {
+        if (numArray.indexOf(result[i]) == inputArray.indexOf(result[i])) {
+          A++;
+        } 
+        else {
+          B++;
+        }
+      }
+      //step3 創元素
+      // <div class="grid-group"> --> <div class="grid"> --> <span>?A?B</span>
+      //--> <span>猜的數字</span>
+      let gridGroup = document.querySelector(".grid-group");
+      let div = document.createElement("div");
+      div.setAttribute("class", "grid");
+      gridGroup.appendChild(div);
+
+      let span = document.createElement("span");
+      div.appendChild(span);
+      span.innerText = `${A}A${B}B`;
+
+      let span2 = document.createElement("span");
+      div.appendChild(span2);
+      span2.innerText = inputValue;
+      //判斷猜對顯示綠色 否則顯示紅色
+      if (A == 4) {
+        span.setAttribute("class", "badge bg-success");
+      } else {
+        span.setAttribute("class", "badge bg-danger");
+      }
+      A = 0;
+      B = 0;
+      //不能輸入超過4個以上的數字
+      if (inputArray.length > 4) {
+        alert(`請輸入4個不重複數字`);
+        span.innerText = "";
+        span2.innerText = "";
+        gridGroup.removeChild(div);
+      }
+      //不能輸入重複的數字
+      for (let j = 1; j < inputArray.length - 1; i++) {
+        if (inputArray[0] == inputArray[j]) {
+          alert(`請輸入4個不重複數字`);
+          span.innerText = "";
+          span2.innerText = "";
+          gridGroup.removeChild(div);
+        }
+      }
+
+    }
+
+    btnGuess.onclick = guess;
+    //不能輸入小數
+    
+  </script>
+
+</body>
+
+</html>
