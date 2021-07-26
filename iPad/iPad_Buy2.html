@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <title>iPad_Buy</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="pic">
+                    <img src="select.jpg" alt="select">
+                </div>
+            </div>
+            <div class="right col-12 col-md-6">
+                <div class="txt">
+                    <h2>購買 iPad Air</h2>
+                </div>
+                <div class="row">
+                    <div class="txt">
+                        <h3>外觀</h3>
+                    </div>
+                    <div class="col-6" role="group" aria-label="Basic outlined example">
+                        <button class="btn-color btn btn-outline" id="spacegray">
+                            <img src="spacegray_.png" alt="color">
+                            <span>石墨色</span>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn-color btn btn-outline" id="silver">
+                            <img src="silver_.png" alt="color">
+                            <span>銀色</span>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn-color btn btn-outline" id="gold">
+                            <img src="gold_.jpg" alt="color">
+                            <span>玫瑰金色</span>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn-color btn btn-outline" id="green">
+                            <img src="green_.png" alt="color">
+                            <span>綠色</span>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn-color btn btn-outline" id="blue">
+                            <img src="blue_.png" alt="color">
+                            <span>天藍色</span>
+                        </button>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="row">
+                    <div class="txt">
+                        <h3>儲存裝置</h3>
+                    </div>
+                    <div class="col-6">
+                        <button class="storage storageS btn btn-outline" disabled>
+                            <span class="storage-GB">64GB</span>
+                            <span>NT$18,900</span>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button class="storage storageL btn btn-outline" disabled>
+                            <span class="storage-GB">256GB</span>
+                            <span>NT$23,900</span>
+                        </button>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="row">
+                    <div class="txt">
+                        <h3>連線能力</h3>
+                    </div>
+                    <div class="col-6">
+                        <button class="network networks btn btn-outline" disabled>
+                            <span class="wi-fi">Wi-Fi</span>
+                            <span>NT$18,900</span>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button class="network networkPlus btn btn-outline" disabled>
+                            <span class="wi-fi">Wi-Fi+行動網路</span>
+                            <span>NT$23,200</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <span class="total">NT$18,900</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <script>
+        const url = "https://raw.githubusercontent.com/HuiHsuan-Huang/HuiHsuan-Huang.github.io/master/iPad/iPad.json";
+        let ipadArray = [];
+        getJsonData();
+        let price;
+        //color
+        let img = document.querySelector(".pic img");
+        let spacegray = document.querySelector("#spacegray");
+        let btnColor = document.querySelectorAll(".btn-color");
+        let colors;
+        let ipadColor;
+        btnColor.forEach(item => {
+          
+            item.addEventListener("click", () => {
+              
+                colors = item.getAttribute("id")
+                img.src = `${colors}.png`;
+                // btnColor.style.borderColor = "blue";
+                ipadColor = item.querySelector("span").innerText;
+                openStorage()
+                // item.style.borderColor="blue";                 
+                // //    $(`.btn-color:not${item}`)
+                // let notcolor = document.querySelectorAll(`.col-6 >  button:not(#${item.id}).btn-color`)
+                // notcolor.forEach(x=>x.style.borderColor = "rgb(194, 189, 189)")
+
+            });
+        });
+
+
+
+
+        //storage
+        let storages = document.querySelectorAll(".storage");
+        let storage;
+        storages.forEach(item => {
+            item.addEventListener("click", () => {
+                storage = item.getElementsByClassName('storage-GB')[0].innerText
+                // price=ipadArray.filter(item=>item.storage==storage||item.network==connect);
+                getPrice();
+                openNetwork();
+            });
+
+        })
+
+        //Wi-Fi
+        let connects = document.querySelectorAll(".network");
+        let connect;
+        connects.forEach(item => {
+            item.addEventListener("click", () => {
+                connect = item.getElementsByClassName('wi-fi')[0].innerText
+                getPrice();
+            });
+        })
+
+        function getPrice() {
+            debugger;
+
+            if (colors == undefined || storage == undefined || connect == undefined) {
+                return;
+
+            } else {
+                let array = ipadArray.filter(item => item.color == ipadColor && item.storage == storage && item
+                    .network == connect);
+                total.innerHTML = `NT$${Intl.NumberFormat().format(array[0].price)}`;
+            }
+        }
+
+
+
+
+        //storage
+        let storageS = document.querySelector(".storageS");
+        let storageL = document.querySelector(".storageL");
+        storageS.addEventListener("click", GB64);
+        storageL.addEventListener("click", GB256);
+        let total = document.querySelector(".total");
+
+        function GB64() {
+            total.innerHTML = "NT$18,900";
+        }
+
+        function GB256() {
+            total.innerText = "NT$23,900";
+        }
+
+
+
+        function getJsonData() {
+
+            let xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                ipadArray = JSON.parse(this.responseText);
+            };
+            xhr.open("GET", url);
+            xhr.send();
+        }
+
+        //network
+        let networks = document.querySelector(".networks");
+        let networkPlus = document.querySelector(".networkPlus");
+
+        //點colorBtn storageBtn被打開
+        function openStorage() {
+            document.querySelector(".storageS").disabled = false;
+            document.querySelector(".storageL").disabled = false;
+        }
+        //點storageBtn network被打開
+        function openNetwork() {
+            document.querySelector(".networks").disabled = false;
+            document.querySelector(".networkPlus").disabled = false;
+        }
+
+        // let price=ipadArray.filter(item=>item.storage==storage||item.network==connect);
+        // debugger;
+    </script>
+
+</body>
+
+</html>

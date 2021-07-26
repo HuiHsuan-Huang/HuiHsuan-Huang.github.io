@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.pic img{
+   width: 100%;
+   height: auto;
+}
+.txt h2{
+    font-size: 40px;
+    font-weight: bold;
+    margin: 30px 0;
+}
+.txt h3{
+    font-size: 20px;
+    font-weight: bold;
+}
+.btn-color{
+    background-color: white;
+    border-radius:12px;
+    border:1px solid rgb(194, 189, 189);
+    padding:25px 20px;
+    margin: 10px 0;  
+    width: 100%;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;    
+}
+.btn-color img{
+    width: 32px;
+    height: 32px;    
+}  
+.btn-color:hover{
+    border:1px solid gray;
+}
+.line{
+    border: 1px solid rgb(219, 216, 216);
+    opacity: .3;
+    width: 90%;
+    margin: 20px 0;
+    
+}
+.storage{
+    background-color: white;
+    border-radius:12px;
+    border:1px solid rgb(194, 189, 189);
+    padding:25px 20px;
+    margin: 10px 0;  
+    width: 100%;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;   
+}
+.storage:hover{
+    border:1px solid gray;
+}
+.storage-GB{
+    font-size: 30px;
+    font-weight: bold;
+}
+.network{
+    background-color: white;
+    border-radius:12px;
+    border:1px solid rgb(194, 189, 189);
+    padding:25px 20px;
+    margin: 10px 0;  
+    width: 100%;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;  
+}
+.wi-fi{
+    font-size: 18px;
+    font-weight: bold;
+}
+.total{
+    font-size: 40px;
+    font-weight: bold;
+}
+.network:hover{
+    border:1px solid gray;
+}
+.right{
+    max-width: 512px;   
+    margin: auto;
+}
