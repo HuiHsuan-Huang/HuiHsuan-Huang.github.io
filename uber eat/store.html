@@ -21,7 +21,7 @@
 
         .imgAndClose img {
             /* width: 100%; */
-            height: 200px;
+            height: 200px  !important;
         }
 
         .add-group {
@@ -32,6 +32,10 @@
         .quantityAddWrap {
             justify-content: center !important;
         }
+        .cardwrap,.imgAndClose{
+            width: 100% !important;
+        }
+
     }
 
     /* 桌機 */
@@ -55,11 +59,18 @@
             justify-content: center !important;
         }
 
-        .scroll {
+        /* .scroll {
             overflow: auto;
             height: 399px !important;
             display: block;
-        }
+        } */
+    }
+    @media screen and (min-width:922px) {
+        /* .scroll {
+            overflow: auto;
+            height: 399px !important;
+            display: block;
+        } */
     }
 
     /* top */
@@ -347,12 +358,16 @@
 
     .imgAndClose {
         position: relative;
-        width: 100%;
+        width: 50%;
     }
-
+    .imgAndClose-pic{
+        width: 100%;
+        /* height: 500px;   */
+    }
     .imgAndClose img {
         display: block;
         width: 100%;
+        height: 500px;
     }
 
     .imgAndClose .fa-times-circle {
@@ -394,7 +409,8 @@
     }
 
     .cardwrap {
-        width: 100%;
+        height: 500px;
+        width: 50%;
     }
 
     .bill-txt {
@@ -403,7 +419,7 @@
 
     .scroll {
         overflow: auto;
-        height: 300px;
+        height: 500px;
         display: block;
     }
 
@@ -518,7 +534,9 @@
                             </span>
                         </div>
 
-                        <img src="https://picsum.photos/458/192/?random=1">
+                        <div class="imgClose-pic">
+                            <img src="https://picsum.photos/458/192/?random=1">
+                        </div>
                     </div>
                 </div>
                 <div class="dataModal-body">
@@ -599,10 +617,12 @@
                                 <i class="far fa-times-circle fa-3x"></i>
                             </span>
                         </div>
-                        <img src="https://picsum.photos/600/420/?random=1">
+                        <div class="imgAndClose-pic">
+                            <img src="https://picsum.photos/600/600/?random=1">
+                        </div>
                     </div>
 
-                    <div class="cardwrap d-flex flex-column justify-content-end">
+                    <div class="cardwrap d-flex flex-column">
                         <div class="scroll">
                             <div class="topWrap">
                                 <div class="food p-4">
