@@ -165,14 +165,17 @@
 
     .modal-title {
         font-size: 40px;
+        position: relative;
     }
 
     .modal-title span {
         font-size: 16px;
     }
 
-    .btn-time {
-        padding: 10px;
+    .btnTimeClose {
+        padding: 5px;
+        position: absolute;
+        top: 0px;
     }
 
     /* 下拉選單 */
@@ -467,7 +470,7 @@
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="btn-time">
+                        <div class="btn-time btnTimeClose">
                             <button type="button-time" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
