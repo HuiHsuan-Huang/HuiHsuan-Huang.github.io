@@ -13,311 +13,407 @@
     <title>store</title>
 </head>
 <style>
-/* top */
-/* ipad */
-@media screen and (min-width: 768px) {
-    .carousel-item img{
+    /* 手機 */
+    @media screen and (max-width:992px) {
+        .modal-header {
+            display: block;
+        }
+
+        .imgAndClose img {
+            /* width: 100%; */
+            height: 200px;
+        }
+
+        .add-group {
+            display: block !important;
+            text-align: center;
+        }
+
+        .quantityAddWrap {
+            justify-content: center !important;
+        }
+    }
+
+    /* 桌機 */
+    @media screen and (min-width: 992px) {
+
+        .carousel-item img {
+            height: 200px;
+        }
+
+        .card img {
+            width: 88px !important;
+            height: 120px;
+        }
+
+        .add-group {
+            display: flex;
+            text-align: center;
+        }
+
+        .quantityAddWrap {
+            justify-content: center !important;
+        }
+
+        .scroll {
+            overflow: auto;
+            height: 399px !important;
+            display: block;
+        }
+    }
+
+    /* top */
+    .top {
+        background-color: rgb(238, 247, 237);
+        width: 100%;
+        position: fixed;
+        text-align: center;
+        z-index: 2;
+    }
+
+    .discount {
+        width: 100%;
+    }
+
+    .top a {
+        color: green;
+        padding: 10px 0;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    .container {
+        max-width: 1268px;
+    }
+
+    /* banner */
+    .banner {
+        margin-top: 44px;
+        width: 100%;
+        position: relative;
+
+    }
+
+    .carousel-item img {
+        width: 100%;
+    }
+
+    .text {
+        position: absolute;
+        bottom: 0;
+        padding: 0 0 20px 20px;
+        color: white;
+    }
+
+    .text img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .text h1 {
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 0 20px 20px 0;
+    }
+
+    .btn-oblong {
+        border-radius: 30px 30px 30px 30px;
+    }
+
+    /* heart */
+    .heart .heartSolid {
+        display: none;
+    }
+
+    .heart .heartSolid {
+        color: white;
+    }
+
+    .heart .heartEmpty {
+        color: white;
+    }
+
+    .heart {
+        cursor: pointer;
+    }
+
+    /* timeModal */
+    .modal-header {
+        border-bottom: none;
+    }
+
+    .modal-footer {
+        border-top: none;
+    }
+
+    .modal-title {
+        font-size: 40px;
+    }
+
+    .modal-title span {
+        font-size: 16px;
+    }
+
+    .btn-time {
+        padding: 10px;
+    }
+
+    /* 下拉選單 */
+    .form-select {
+        width: 100%;
+        padding: 12px 32px 12px 16px;
+        margin-bottom: 12px;
+        background-color: #F6F6F6;
+        border: none;
+    }
+
+    .modal-footer button {
+        width: 100%;
+        border-radius: none;
+    }
+
+    /* 地址 */
+    .address {
+        padding: 0 40px;
+    }
+
+    .address a {
+        color: black;
+        text-decoration: underline;
+    }
+
+    /* dataModal */
+    .dataModal-header img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .dataModal-header {
+        width: 200%;
+    }
+
+    .line {
+        height: 2px;
+        border-bottom: 2px solid #e2e2e2;
+    }
+
+    .map {
+        display: flex;
+        justify-content: space-between;
+        /* width: 450px; */
+        margin: auto;
+        padding: 10px 0;
+        align-items: center;
+    }
+
+    .time {
+        display: flex;
+        justify-content: space-between;
+        /* width: 450px; */
+        margin: auto;
+        padding: 10px 0;
+        align-items: center;
+    }
+
+    .discounts {
+        display: flex;
+        justify-content: space-between;
+        /* width: 450px; */
+        margin: auto;
+        padding: 10px 0;
+        align-items: center;
+    }
+
+    .discounts span {
+        color: #545454;
+        font-size: 14px;
+    }
+
+    .score {
+        display: flex;
+        justify-content: space-between;
+        /* width: 450px; */
+        margin: auto;
+        padding: 10px 0;
+        align-items: center;
+    }
+
+    .bill {
+        padding-left: 20px;
+    }
+
+    .bill p {
+        font-size: 14px;
+        color: rgb(117, 117, 117);
+    }
+
+    .ticket img {
+        width: 21px;
+        height: 21px;
+    }
+
+    .imgClose {
+        position: relative;
+        width: 100%;
+    }
+
+    .imgClose img {
+        display: block;
+        width: 50%;
+    }
+
+    .imgClose .fa-times-circle {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #fff;
+        /* background: #FFFFFF; */
+    }
+
+    /* storeModal */
+    .carousel-item img {
         height: 200px;
     }
-    .card img{
-        width: 88px!important;
+
+    .card img {
+        width: 88px !important;
         height: 120px;
     }
-    /* .storeModal{
-        display: block;
-    } */
-    /* .imgAndClose img{
-        width: 100%;
-        height: 200px;
-    } */
-    .add-group{
-        display:flex;
+
+    .add-group {
+        display: flex;
         text-align: center;
-    }    
-    .quantityAddWrap{
-        justify-content:center !important;
-    }     
-}
-@media screen and (max-width: 768px) {
-    .modal-header{
+    }
+
+    .quantityAddWrap {
+        justify-content: center !important;
+    }
+
+    .navbar a {
+        color: black;
+        padding: 0 10px;
+        text-decoration: none;
+
+    }
+
+    .navbar {
+        justify-content: start;
+        border-bottom: 1px solid gray;
+        background-color: white;
+    }
+
+    .title {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card img {
+        width: 50%;
+    }
+
+    .card-body {
+        width: 50%;
+    }
+
+    .txt {
+        font-size: 23px;
+        font-weight: bold;
+    }
+
+    .card {
+        margin: 10px 0;
+    }
+
+    .card:hover {
+        border: 1px solid black;
+    }
+
+    .card .row,
+    .item-group {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .item-group {
+        cursor: pointer;
+    }
+
+    .imgAndClose {
+        position: relative;
+        width: 100%;
+    }
+
+    .imgAndClose img {
+        display: block;
+        width: 100%;
+    }
+
+    .imgAndClose .fa-times-circle {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #fff;
+        /* background: #FFFFFF; */
+    }
+
+    .selectedBgc {
+        background: rgb(246, 246, 246);
+    }
+
+    .checkboxDiv input {
+        width: 20px;
+        height: 20px;
+    }
+
+    .addItemBgC {
+        padding: 10px 0;
+    }
+
+    .addItemBgC i {
+        padding: 0 15px;
+    }
+
+    .addToCart {
+        text-align: center;
+    }
+
+    .price {
+        text-align: right;
+    }
+
+    .cardwrap input {
+        border: none;
+        padding: 24px;
+    }
+
+    .cardwrap {
+        width: 100%;
+    }
+
+    .bill-txt {
+        background: rgb(246, 246, 246);
+    }
+
+    .scroll {
+        overflow: auto;
+        height: 300px;
         display: block;
     }
-    .imgAndClose img{
-        width: 100%;
-        height: 200px;
+
+    .add-group {
+        display: flex;
     }
-    .add-group{
-        display:block !important;
-        text-align: center;
-    }    
-    .quantityAddWrap{
-        justify-content:center !important;
-    }   
-}
 
-.top{
-    background-color:rgb(238, 247, 237);
-    width: 100%;              
-    position: fixed;      
-    text-align: center;
-    z-index: 2;  
-}
-
-.discount{
-    width: 100%;
-}
-.top a{
-    color: green;
-    padding: 10px 0;
-    display:inline-block;
-    text-decoration: none;
-}
-
-.container{
-    max-width: 1268px;
- }
-
-/* banner */
-.banner{
-    margin-top: 44px;
-    width: 100%;
-    position: relative;
-   
-}
-
-.carousel-item img{
-    width: 100%;       
-}
-.text{
-    position: absolute;
-    bottom: 0;
-    padding: 0 0 20px 20px;
-    color: white;
-}
-.text img{
-    width: 14px;
-    height: 14px;
-}
-.text h1{
-    font-size: 36px;
-    font-weight: bold;
-}
-.button{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 0 20px 20px 0;      
-}
-.btn-oblong {
-    border-radius: 30px 30px 30px 30px;
-}
-/* heart */
-.heart .heartSolid{
-    display: none;
-}
-.heart .heartSolid{
-    color: white;
-}
-.heart .heartEmpty{
-    color: white;
-}
-.heart{
-    cursor: pointer;
-}
-
-/* timeModal */
-.modal-header{
-    border-bottom:none;
-}
-.modal-footer{
-    border-top: none;
-}
-.modal-title{
-    font-size: 40px;
-}
-.modal-title span{
-    font-size: 16px;
-}
-.btn-time{
-    padding: 10px;
-}
-/* 下拉選單 */
-.form-select{
-    width: 100%;
-    padding: 12px 32px 12px 16px;    
-    margin-bottom:12px ;
-    background-color: #F6F6F6;
-    border:none;   
-}
-
-.modal-footer button{
-    width: 100%; 
-    border-radius:none;
-}
-
-/* 地址 */
-.address{
-    padding: 0 40px;
-}
-.address a{
-    color: black;
-    text-decoration: underline;
-}
-
-/* dataModal */
-.dataModal-header img{
-    width: 100%;   
-    display: flex;
-    justify-content: center;   
-}
-.line{
-    height: 2px;
-    border-bottom: 2px solid #e2e2e2;
-}
-.map{
-    display: flex; 
-    justify-content: space-between;
-    /* width: 450px; */
-    margin: auto;
-    padding: 10px 0;
-    align-items: center;
-}
-.time{
-    display: flex; 
-    justify-content: space-between;
-    /* width: 450px; */
-    margin: auto;
-    padding: 10px 0;
-    align-items: center;
-}
-
-.discounts{
-    display: flex; 
-    justify-content: space-between;
-    /* width: 450px; */
-    margin: auto;
-    padding: 10px 0;
-    align-items: center;
-}
-.discounts span{
-    color: #545454;
-    font-size: 14px;
-}
-.score{
-    display: flex; 
-    justify-content: space-between;
-    /* width: 450px; */
-    margin: auto;
-    padding: 10px 0;
-    align-items: center;
-}
-.bill{
-    padding-left:20px ;   
-}
-.bill p{
-    font-size: 14px;
-    color: rgb(117, 117, 117);   
-}
-.ticket img{
-    width: 21px;
-    height: 21px;
-}
-/* storeModal */
-.navbar a{
-    color: black;    
-    padding: 0 10px;
-    text-decoration: none;
-
-}
-.navbar{
-    justify-content:start;
-    border-bottom:1px solid gray ;
-    background-color: white;  
-}
-
-.title{
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.card img{
-    width: 50%;
-}
-.card-body{
-    width: 50%;
-}
-.txt{
-    font-size: 23px;
-    font-weight:bold;
-}
-
-.card{
-    margin: 10px 0;   
-}
-.card:hover{
-    border:1px solid black;
-}
-.card .row,.item-group{
-    margin-left: 0;
-    margin-right: 0;
-}
-.item-group{
-    cursor: pointer;
-}
-
-.imgAndClose {
-    position: relative;
-}
-
-.imgAndClose img {
-    display: block;  
-}
-
-.imgAndClose .fa-times-circle {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: #fff;
-    /* background: #FFFFFF; */
-}
-
-.selectedBgc {
-    background: rgb(246, 246, 246);
-}
-
-.checkboxDiv input {
-    width: 20px;
-    height: 20px;
-}
-.addItemBgC{    
-    padding: 10px 0;
-}
-.addItemBgC i{
-    padding: 0 15px;
-}
-.addToCart{
-    text-align: center;
-}
-.price{
-    text-align: right;
-}
-.cardwrap input{
-    border: none;
-    padding: 24px;
-}
-.bill-txt{
-    background: rgb(246, 246, 246);
-}
-
-.overflow-auto{
-    overflow: auto;
-}
-.add-group{
-    display: flex;
-}
-.quantityAddWrap{
-    justify-content:space-between;
-}
+    .quantityAddWrap {
+        justify-content: space-between;
+    }
 </style>
 
 <body>
@@ -351,8 +447,8 @@
                 安排時間
             </button>
             <!-- timeModal -->
-            <div class="timeModal modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
+            <div class="timeModal modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="btn-time">
@@ -361,7 +457,7 @@
                             </button>
                         </div>
                         <div class="modal-header">
-                            
+
                             <h3 class="modal-title" id="exampleModalLabel">在11:30
                                 AM開始營業<br><span>這家餐廳目前沒有營業，但您可提前預約訂單。</span></h3>
 
@@ -415,7 +511,7 @@
             <div class="modal-content">
                 <div class="dataModal-header">
 
-                    <div class="imgAndClose">
+                    <div class="imgClose">
                         <div type="button" data-dismiss="modal">
                             <span aria-hidden="true">
                                 <i class="far fa-times-circle fa-3x"></i>
@@ -491,65 +587,69 @@
         </div>
     </div>
 
-     <!-- storeModal -->
-     <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- storeModal -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="storeModal modal-header cardModalHeader justify-content-start p-0">
+
                     <div class="imgAndClose">
                         <div type="button" data-dismiss="modal">
                             <span aria-hidden="true">
                                 <i class="far fa-times-circle fa-3x"></i>
                             </span>
                         </div>
-                        <img src="https://picsum.photos/600/600/?random=1">
+                        <img src="https://picsum.photos/600/420/?random=1">
                     </div>
 
-                    <div class="cardwrap w-100 d-flex flex-column justify-content-end overflow-auto">
-                        <div class="topWrap">
-                            <div class="food p-4">
-                                <h2>蕃茄迷你鍋</h2>
-                                <p>附白飯一碗。恕無客製化醬料，敬請見諒。</p>
-                            </div>
-                            <div class="selectedBgc p-4">
-                                <div class="selected d-flex justify-content-between align-items-center">
-                                    <div class="selectWrap">
-                                        <div class="selectedTitle">辣選擇</div>
-                                        <div class="selectedTxt">
-                                            <span>最多可選擇 1 個項目</span>
+                    <div class="cardwrap d-flex flex-column justify-content-end">
+                        <div class="scroll">
+                            <div class="topWrap">
+                                <div class="food p-4">
+                                    <h2>蕃茄迷你鍋</h2>
+                                    <p>附白飯一碗。恕無客製化醬料，敬請見諒。</p>
+                                </div>
+                                <div class="selectedBgc p-4">
+                                    <div class="selected d-flex justify-content-between align-items-center">
+                                        <div class="selectWrap">
+                                            <div class="selectedTitle">辣選擇</div>
+                                            <div class="selectedTxt">
+                                                <span>最多可選擇 1 個項目</span>
+                                            </div>
+                                        </div>
+                                        <div class="circleIconDiv">
+                                            <i class="fas fa-chevron-circle-down circleIcon fa-2x"></i>
                                         </div>
                                     </div>
-                                    <div class="circleIconDiv">
-                                        <i class="fas fa-chevron-circle-down circleIcon fa-2x"></i>
+                                </div>
+                                <div class="checkboxDiv d-flex align-items-center p-4">
+                                    <input type="checkbox" class="p-2" size="20">
+                                    <div class="checkboxTxt p-2">加辣</div>
+                                </div>
+                            </div>
+                            <input type="text" placeholder="新增註記(醬料多一點，不加洋蔥等)">
+                            <div class="bill-txt">
+                                <p>[本店免開統一發票] 本商家所提供的商品沒有含有任何依法規應揭露之肉類食材
+                                    (上開肉品資訊是由我們所合作之商家合作夥伴所提供。如對上開資訊有任何疑問，請直接與商家合作夥伴聯繫)
+                                </p>
+                            </div>
+                            <div class="addItemBgC">
+                                <div class="add-group wrap justify-content-around">
+                                    <div class="quantityAddWrap d-flex">
+                                        <i class="fas fa-minus-circle fa-2x"></i>
+                                        <div class="quantity" style="font-size: 20px;">1</div>
+                                        <i class="fas fa-plus-circle fa-2x"></i>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="checkboxDiv d-flex align-items-center p-4">
-                                <input type="checkbox" class="p-2" size="20">
-                                <div class="checkboxTxt p-2">加辣</div>
-                            </div>
-                        </div>
-                        <input type="text" placeholder="新增註記(醬料多一點，不加洋蔥等)">
-                        <div class="bill-txt">
-                            <p>[本店免開統一發票] 本商家所提供的商品沒有含有任何依法規應揭露之肉類食材 (上開肉品資訊是由我們所合作之商家合作夥伴所提供。如對上開資訊有任何疑問，請直接與商家合作夥伴聯繫)
-                            </p>
-                        </div>
-                        <div class="addItemBgC">
-                            <div class="add-group wrap justify-content-around">
-                                <div class="quantityAddWrap d-flex">
-                                    <i class="fas fa-minus-circle fa-2x"></i>
-                                    <div class="quantity" style="font-size: 20px;">1</div>
-                                    <i class="fas fa-plus-circle fa-2x"></i>
-                                </div>
-                                <div class="addToCartWrap">
-                                    <button type="button" class="btn btn-lg btn-dark active">
-                                        <span class="addToCart">
-                                            新增 1 項商品至訂單
-                                        </span>
-                                        <span class="price">
-                                            $195.00
-                                        </span>
-                                    </button>
+                                    <div class="addToCartWrap">
+                                        <button type="button" class="btn btn-lg btn-dark active">
+                                            <span class="addToCart">
+                                                新增 1 項商品至訂單
+                                            </span>
+                                            <span class="price">
+                                                $195.00
+                                            </span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
