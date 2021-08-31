@@ -2,296 +2,45 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <title>store</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="style2.css"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <title>store</title>
 </head>
 <style>
     /* 手機 */
-    @media screen and (max-width:992px) {
-        .modal-header {
-            display: block;
-        }
-
-        .imgAndClose img {
-            /* width: 100%; */
-            height: 200px  !important;
-        }
-
-        .add-group {
-            display: block !important;
-            text-align: center;
-        }
-
-        .quantityAddWrap {
-            justify-content: center !important;
-        }
-        .cardwrap,.imgAndClose{
-            width: 100% !important;
-        }
-
-    }
-
-    /* 桌機 */
-    @media screen and (min-width: 992px) {
-
-        .carousel-item img {
-            height: 200px;
-        }
-
-        .card img {
-            width: 88px !important;
-            height: 120px;
-        }
-
-        .add-group {
-            display: flex;
-            text-align: center;
-        }
-
-        .quantityAddWrap {
-            justify-content: center !important;
-        }
-
-        /* .scroll {
-            overflow: auto;
-            height: 399px !important;
-            display: block;
-        } */
-    }
-    @media screen and (min-width:922px) {
-        /* .scroll {
-            overflow: auto;
-            height: 399px !important;
-            display: block;
-        } */
-    }
-
-    /* top */
-    .top {
-        background-color: rgb(238, 247, 237);
-        width: 100%;
-        position: fixed;
-        text-align: center;
-        z-index: 2;
-    }
-
-    .discount {
-        width: 100%;
-    }
-
-    .top a {
-        color: green;
-        padding: 10px 0;
-        display: inline-block;
-        text-decoration: none;
-    }
-
-    .container {
-        max-width: 1268px;
-    }
-
-    /* banner */
-    .banner {
-        margin-top: 44px;
-        width: 100%;
-        position: relative;
-
-    }
-
-    .carousel-item img {
-        width: 100%;
-    }
-
-    .text {
-        position: absolute;
-        bottom: 0;
-        padding: 0 0 20px 20px;
-        color: white;
-    }
-
-    .text img {
-        width: 14px;
-        height: 14px;
-    }
-
-    .text h1 {
-        font-size: 36px;
-        font-weight: bold;
-    }
-
-    .button {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        padding: 0 20px 20px 0;
-    }
-
-    .btn-oblong {
-        border-radius: 30px 30px 30px 30px;
-    }
-
-    /* heart */
-    .heart .heartSolid {
-        display: none;
-    }
-
-    .heart .heartSolid {
-        color: white;
-    }
-
-    .heart .heartEmpty {
-        color: white;
-    }
-
-    .heart {
-        cursor: pointer;
-    }
-
-    /* timeModal */
+  @media screen and (max-width:992px) {
     .modal-header {
-        border-bottom: none;
-    }
-
-    .modal-footer {
-        border-top: none;
-    }
-
-    .modal-title {
-        font-size: 40px;
-        position: relative;
-    }
-
-    .modal-title span {
-        font-size: 16px;
-    }
-
-    .btnTimeClose {
-        padding: 5px;
-        position: absolute;
-        top: 0px;
-    }
-
-    /* 下拉選單 */
-    .form-select {
-        width: 100%;
-        padding: 12px 32px 12px 16px;
-        margin-bottom: 12px;
-        background-color: #F6F6F6;
-        border: none;
-    }
-
-    .modal-footer button {
-        width: 100%;
-        border-radius: none;
-    }
-
-    /* 地址 */
-    .address {
-        padding: 0 40px;
-    }
-
-    .address a {
-        color: black;
-        text-decoration: underline;
-    }
-
-    /* dataModal */
-    .dataModal-header img {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .dataModal-header {
-        width: 200%;
-    }
-
-    .line {
-        height: 2px;
-        border-bottom: 2px solid #e2e2e2;
-    }
-
-    .map {
-        display: flex;
-        justify-content: space-between;
-        /* width: 450px; */
-        margin: auto;
-        padding: 10px 0;
-        align-items: center;
-    }
-
-    .time {
-        display: flex;
-        justify-content: space-between;
-        /* width: 450px; */
-        margin: auto;
-        padding: 10px 0;
-        align-items: center;
-    }
-
-    .discounts {
-        display: flex;
-        justify-content: space-between;
-        /* width: 450px; */
-        margin: auto;
-        padding: 10px 0;
-        align-items: center;
-    }
-
-    .discounts span {
-        color: #545454;
-        font-size: 14px;
-    }
-
-    .score {
-        display: flex;
-        justify-content: space-between;
-        /* width: 450px; */
-        margin: auto;
-        padding: 10px 0;
-        align-items: center;
-    }
-
-    .bill {
-        padding-left: 20px;
-    }
-
-    .bill p {
-        font-size: 14px;
-        color: rgb(117, 117, 117);
-    }
-
-    .ticket img {
-        width: 21px;
-        height: 21px;
-    }
-
-    .imgClose {
-        position: relative;
-        width: 100%;
-    }
-
-    .imgClose img {
         display: block;
-        width: 50%;
     }
 
-    .imgClose .fa-times-circle {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        color: #fff;
-        /* background: #FFFFFF; */
+    .imgAndClose img {
+        /* width: 100%; */
+        height: 200px  !important;
     }
 
-    /* storeModal */
+    .add-group {
+        display: block !important;
+        text-align: center;
+    }
+
+    .quantityAddWrap {
+        justify-content: center !important;
+    }
+    .cardwrap,.imgAndClose{
+        width: 100% !important;
+    }
+
+}
+
+/* 桌機 */
+@media screen and (min-width: 992px) {
+
     .carousel-item img {
         height: 200px;
     }
@@ -310,622 +59,941 @@
         justify-content: center !important;
     }
 
-    .navbar a {
-        color: black;
-        padding: 0 10px;
-        text-decoration: none;
-
-    }
-
-    .navbar {
-        justify-content: start;
-        border-bottom: 1px solid gray;
-        background-color: white;
-    }
-
-    .title {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .card img {
-        width: 50%;
-    }
-
-    .card-body {
-        width: 50%;
-    }
-
-    .txt {
-        font-size: 23px;
-        font-weight: bold;
-    }
-
-    .card {
-        margin: 10px 0;
-    }
-
-    .card:hover {
-        border: 1px solid black;
-    }
-
-    .card .row,
-    .item-group {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .item-group {
-        cursor: pointer;
-    }
-
-    .imgAndClose {
-        position: relative;
-        width: 50%;
-    }
-    .imgAndClose-pic{
-        width: 100%;
-        /* height: 500px;   */
-    }
-    .imgAndClose img {
-        display: block;
-        width: 100%;
-        height: 500px;
-    }
-
-    .imgAndClose .fa-times-circle {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        color: #fff;
-        /* background: #FFFFFF; */
-    }
-
-    .selectedBgc {
-        background: rgb(246, 246, 246);
-    }
-
-    .checkboxDiv input {
-        width: 20px;
-        height: 20px;
-    }
-
-    .addItemBgC {
-        padding: 10px 0;
-    }
-
-    .addItemBgC i {
-        padding: 0 15px;
-    }
-
-    .addToCart {
-        text-align: center;
-    }
-
-    .price {
-        text-align: right;
-    }
-
-    .cardwrap input {
-        border: none;
-        padding: 24px;
-    }
-
-    .cardwrap {
-        height: 500px;
-        width: 50%;
-    }
-
-    .bill-txt {
-        background: rgb(246, 246, 246);
-    }
-
-    .scroll {
+    /* .scroll {
         overflow: auto;
-        height: 500px;
+        height: 399px !important;
         display: block;
-    }
+    } */
+}
 
-    .add-group {
-        display: flex;
-    }
+/* top */
+.top {
+    background-color: rgb(238, 247, 237);
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    z-index: 2;    
+}
 
-    .quantityAddWrap {
-        justify-content: space-between;
-    }
+.discount {
+    width: 100%;
+}
+
+.top a {
+    color: green;
+    padding: 10px 0;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1920px;
+}
+
+/* banner */
+.banner {
+    margin-top: 44px;
+    width: 100%;
+    position: relative;
+
+}
+
+.carousel-item img {
+    width: 100%;
+}
+
+.text {
+    position: absolute;
+    bottom: 0;
+    padding: 0 0 20px 20px;
+    color: white;
+}
+
+.text img {
+    width: 14px;
+    height: 14px;
+}
+
+.text h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0 20px 20px 0;
+}
+
+.btn-oblong {
+    border-radius: 30px 30px 30px 30px;
+}
+
+/* heart */
+.heart .heartSolid {
+    display: none;
+}
+
+.heart .heartSolid {
+    color: white;
+}
+
+.heart .heartEmpty {
+    color: white;
+}
+
+.heart {
+    cursor: pointer;
+}
+
+/* timeModal */
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.modal-title {
+    font-size: 36px;
+    position: relative;
+}
+
+.modal-title span {
+    font-size: 16px;
+}
+
+.btnTimeClose {
+    padding: 5px;
+    position: absolute;
+    top: 0px;
+}
+
+/* 下拉選單 */
+.form-select {
+    width: 100%;
+    padding: 12px 32px 12px 16px;
+    margin-bottom: 12px;
+    background-color: #F6F6F6;
+    border: none;
+}
+
+.modal-footer button {
+    width: 100%;
+    border-radius: none;
+}
+
+/* 地址 */
+.address {
+    padding: 0 40px;
+}
+
+.address a {
+    color: black;
+    text-decoration: underline;
+}
+
+/* dataModal */
+.dataModal-header img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dataModal-header {
+    width: 200%;
+}
+
+.line {
+    height: 2px;
+    border-bottom: 2px solid #e2e2e2;
+}
+
+.map {
+    display: flex;
+    justify-content: space-between;
+    /* width: 450px; */
+    margin: auto;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    /* width: 450px; */
+    margin: auto;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.discounts {
+    display: flex;
+    justify-content: space-between;
+    /* width: 450px; */
+    margin: auto;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.discounts span {
+    color: #545454;
+    font-size: 14px;
+}
+
+.score {
+    display: flex;
+    justify-content: space-between;
+    /* width: 450px; */
+    margin: auto;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.bill {
+    padding-left: 20px;
+}
+
+.bill p {
+    font-size: 14px;
+    color: rgb(117, 117, 117);
+}
+
+.ticket img {
+    width: 21px;
+    height: 21px;
+}
+
+.imgClose {
+    position: relative;
+    width: 100%;
+}
+
+.imgClose img {
+    display: block;
+    width: 50%;
+}
+
+.imgClose .fa-times-circle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    /* background: #FFFFFF; */
+}
+
+/* storeModal */
+.carousel-item img {
+    height: 200px;
+}
+
+.card img {
+    width: 88px !important;
+    height: 120px;
+}
+
+.add-group {
+    display: flex;
+    text-align: center;
+}
+
+.quantityAddWrap {
+    justify-content: center !important;
+}
+/* navbar */
+.navbar a {
+    color: black;
+    padding: 0 10px;
+    text-decoration: none;
+    
+}
+
+.navbar {
+    justify-content: start;    
+    background-color: white; 
+    border-bottom: 2px solid #E2E2E2;
+    z-index: 3;
+    width: 100%;
+    height: 78px;
+    /* z-index: 3; 
+    position: fixed;
+    top: 40px; 
+    left: 0px;
+    width: 100%; */
+}
+
+/* 您專屬的推薦商品 */
+.title {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.card img {
+    width: 50%;
+}
+
+.card-body {
+    width: 50%;
+}
+
+.title .txt {
+    font-size: 23px;
+    font-weight: bold;   
+    /* padding-top: 40px;
+    padding-bottom: 8px;
+    padding-left: 0;  */
+    /* line-height: 1.5; */
+}
+
+.card {
+    margin: 10px 0;
+}
+
+.card:hover {
+    border: 1px solid black;
+}
+
+.card .row,
+.item-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.item-group {
+    cursor: pointer;
+}
+
+.imgAndClose {
+    position: relative;
+    width: 50%;
+}
+.imgAndClose-pic{
+    width: 100%;
+    /* height: 500px;   */
+}
+.imgAndClose img {
+    display: block;
+    width: 100%;
+    height: 500px;
+}
+
+.imgAndClose .fa-times-circle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    /* background: #FFFFFF; */
+}
+
+.selectedBgc {
+    background: rgb(246, 246, 246);
+}
+
+.checkboxDiv input {
+    width: 20px;
+    height: 20px;
+}
+
+.addItemBgC {
+    padding: 10px 0;
+}
+
+.addItemBgC i {
+    padding: 0 15px;
+}
+
+.addToCart {
+    text-align: center;
+}
+
+.price {
+    text-align: right;
+}
+
+.cardwrap input {
+    border: none;
+    padding: 24px;
+    /* width: 100%; */
+}
+.input{
+  width: 100%;
+}
+.cardwrap {
+    height: 500px;
+    width: 50%;
+}
+
+.bill-txt {
+    background: rgb(246, 246, 246);
+}
+.bill-txt p{
+  padding: 10px;
+}
+.scroll {
+    overflow: auto;
+    height: 500px;
+    display: block;
+}
+
+.add-group {
+    display: flex;
+}
+
+.quantityAddWrap {
+    justify-content: space-between;
+    margin: auto;
+}
+.addToCartWrap button{
+  margin: 10px;
+}
 </style>
-
 <body>
-    <!-- top -->
-    <div class="container-fluid">
-        <div class="discount row">
-            <div class="top col-12">
-                <a href="#">使用優響方案可享$0外送費</a>
-            </div>
-        </div>
+  <!-- top -->
+  <div class="container-fluid">
+    <div class="discount row">
+      <div class="top col-12">
+        <a href="#">使用優響方案可享$0外送費</a>
+      </div>
     </div>
+  </div>
 
-    <!-- banner -->
-    <div class="banner">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="https://picsum.photos/1500/600/?random=1" alt="First slide">
-                </div>
+  <!-- banner -->
+  <div class="banner">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="https://picsum.photos/1500/600/?random=1" alt="First slide">
+        </div>
+      </div>
+    </div>
+    <div class="text">
+      <h1>康盒食堂</h1>
+      <img src="https://dkl8of78aprwd.cloudfront.net/ticket@3x.png" alt="">
+      • 4.9 (21)
+    </div>
+    <div class="button">
+      <!-- 安排時間btn   -->
+      <button type="button" class="btn btn-light btn-oblong" data-toggle="modal" data-target="#exampleModal">
+        <i class="fas fa-calendar-day"></i>
+        安排時間
+      </button>
+      <!-- timeModal -->
+      <div class="timeModal modal fade" id="exampleModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="btn-time btnTimeClose">
+              <button type="button-time" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-        </div>
-        <div class="text">
-            <h1>康盒食堂</h1>
-            <img src="https://dkl8of78aprwd.cloudfront.net/ticket@3x.png" alt="">
-            • 4.9 (21)
-        </div>
-        <div class="button">
-            <!-- 安排時間btn   -->
-            <button type="button" class="btn btn-light btn-oblong" data-toggle="modal" data-target="#exampleModal">
-                <i class="fas fa-calendar-day"></i>
-                安排時間
-            </button>
-            <!-- timeModal -->
-            <div class="timeModal modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="btn-time btnTimeClose">
-                            <button type="button-time" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-header">
+            <div class="modal-header">
 
-                            <h3 class="modal-title" id="exampleModalLabel">在11:30
-                                AM開始營業<br><span>這家餐廳目前沒有營業，但您可提前預約訂單。</span></h3>
+              <h3 class="modal-title" id="exampleModalLabel">在11:30
+                AM開始營業<br><span>這家餐廳目前沒有營業，但您可提前預約訂單。</span></h3>
 
-                            <!-- <button type="button-time" class="close" data-dismiss="modal" aria-label="Close">
+              <!-- <button type="button-time" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button> -->
-                        </div>
-                        <!-- 下拉選單 -->
-                        <div class="modal-body">
-                            <select class="form-select" aria-label="select example">
-                                <option selected>今天，8月26日 週四</option>
-                                <option value="1">明天，8月27日 週五</option>
-                                <option value="2">8月30日 週一</option>
-                                <option value="3">8月31日 週二 </option>
-                            </select>
-
-                            <select class="form-select" aria-label="select example">
-                                <option selected>今天，8月26日 週四</option>
-                                <option value="1">明天，8月27日 週五</option>
-                                <option value="2">8月30日 週一</option>
-                                <option value="3">8月31日 週二 </option>
-                            </select>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-lg btn-dark btn-time">選擇時間</button>
-                            <button type="button" class="btn btn-lg btn-secondary btn-search">查看餐廳</button>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- heart -->
-            <span class="fa-stack fa-1x heart">
-                <i class="far fa-heart fa-stack-1x heartEmpty"></i>
-                <i class="fas fa-heart fa-stack-1x heartSolid"></i>
-            </span>
+            <!-- 下拉選單 -->
+            <div class="modal-body">
+              <select class="form-select" aria-label="select example">
+                <option selected>今天，8月26日 週四</option>
+                <option value="1">明天，8月27日 週五</option>
+                <option value="2">8月30日 週一</option>
+                <option value="3">8月31日 週二 </option>
+              </select>
+
+              <select class="form-select" aria-label="select example">
+                <option selected>今天，8月26日 週四</option>
+                <option value="1">明天，8月27日 週五</option>
+                <option value="2">8月30日 週一</option>
+                <option value="3">8月31日 週二 </option>
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-lg btn-dark btn-time">選擇時間</button>
+              <button type="button" class="btn btn-lg btn-secondary btn-search">查看餐廳</button>
+            </div>
+          </div>
         </div>
+      </div>
+      <!-- heart -->
+      <span class="fa-stack fa-1x heart">
+        <i class="far fa-heart fa-stack-1x heartEmpty"></i>
+        <i class="fas fa-heart fa-stack-1x heartSolid"></i>
+      </span>
     </div>
+  </div>
 
-    <!--地址-->
-    <div class="wrap">
-        <div class="address">
-            <p>$ • 健康飲食</p>
-            <p>Xiuqun Road Lane 457 2, Nanzi District, Kaohsiung City 811 • <a data-toggle="modal" data-target="#more"
-                    href="#">顯示更多</a></p>
+  <!--地址-->
+  <div class="wrap">
+    <div class="address">
+      <p>$ • 健康飲食</p>
+      <p>Xiuqun Road Lane 457 2, Nanzi District, Kaohsiung City 811 • <a data-toggle="modal" data-target="#more"
+          href="#">顯示更多</a></p>
+    </div>
+  </div>
+
+  <!-- dataModal -->
+  <div class="modal fade" id="more" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="dataModal-header">
+
+          <div class="imgClose">
+            <div type="button" data-dismiss="modal">
+              <span aria-hidden="true">
+                <i class="far fa-times-circle fa-3x"></i>
+              </span>
+            </div>
+
+            <div class="imgClose-pic">
+              <img src="https://picsum.photos/458/192/?random=1">
+            </div>
+          </div>
         </div>
-    </div>
+        <div class="dataModal-body">
+          <div class="store-txt">
+            <h2 class="p-3">康和食堂</h2>
+            <span class="p-3">健康飲食 • $</span>
+          </div>
+          <div class="line"></div>
 
-    <!-- dataModal -->
-    <div class="modal fade" id="more" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="dataModal-header">
+          <div class="map">
+            <div class="marker p-3">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="text-center">
+              Xiuqun Road Lane 457 2, Nanzi District, Kaohsiung City 811
+            </div>
+            <div class="copy p-3">
+              <i class="fas fa-clone"></i>
+            </div>
+          </div>
+          <div class="line"></div>
 
-                    <div class="imgClose">
-                        <div type="button" data-dismiss="modal">
-                            <span aria-hidden="true">
-                                <i class="far fa-times-circle fa-3x"></i>
-                            </span>
-                        </div>
+          <div class="time">
+            <div class="clock p-3">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="text-center">營業時間</div>
+            <div class="plus p-3">
+              <i class="fas fa-plus"></i>
+            </div>
+          </div>
+          <div class="line"></div>
 
-                        <div class="imgClose-pic">
-                            <img src="https://picsum.photos/458/192/?random=1">
-                        </div>
-                    </div>
-                </div>
-                <div class="dataModal-body">
-                    <div class="store-txt">
-                        <h2 class="p-3">康和食堂</h2>
-                        <span class="p-3">健康飲食 • $</span>
-                    </div>
-                    <div class="line"></div>
+          <div class="discounts">
+            <div class="ticket p-3">
+              <img src="https://dkl8of78aprwd.cloudfront.net/ticket@3x.png" alt="">
+            </div>
+            <div class="text-center">使用優響方案可享$0外送費<br>
+              <span>Join Eats Pass to save at this store</span>
+            </div>
+            <div class="arrow p-3">
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </div>
+          <div class="line"></div>
 
-                    <div class="map">
-                        <div class="marker p-3">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="text-center">
-                            Xiuqun Road Lane 457 2, Nanzi District, Kaohsiung City 811
-                        </div>
-                        <div class="copy p-3">
-                            <i class="fas fa-clone"></i>
-                        </div>
-                    </div>
-                    <div class="line"></div>
+          <div class="score">
+            <div class="star p-3">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="text-center">4.9 (500+ 筆評分)</div>
+            <div class="space p-3"></div>
+          </div>
+          <div class="line"></div>
 
-                    <div class="time">
-                        <div class="clock p-3">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="text-center">營業時間</div>
-                        <div class="plus p-3">
-                            <i class="fas fa-plus"></i>
-                        </div>
-                    </div>
-                    <div class="line"></div>
+          <div class="bill">
+            <p>[本店開立紙本發票]</p>
+          </div>
 
-                    <div class="discounts">
-                        <div class="ticket p-3">
-                            <img src="https://dkl8of78aprwd.cloudfront.net/ticket@3x.png" alt="">
-                        </div>
-                        <div class="text-center">使用優響方案可享$0外送費<br>
-                            <span>Join Eats Pass to save at this store</span>
-                        </div>
-                        <div class="arrow p-3">
-                            <i class="fas fa-chevron-right"></i>
-                        </div>
-                    </div>
-                    <div class="line"></div>
-
-                    <div class="score">
-                        <div class="star p-3">
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="text-center">4.9 (500+ 筆評分)</div>
-                        <div class="space p-3"></div>
-                    </div>
-                    <div class="line"></div>
-
-                    <div class="bill">
-                        <p>[本店開立紙本發票]</p>
-                    </div>
-
-                </div>
-                <!-- <div class="moreModal-footer">
+        </div>
+        <!-- <div class="moreModal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
                 </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- storeModal -->
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="storeModal modal-header cardModalHeader justify-content-start p-0">
+
+          <div class="imgAndClose">
+            <div type="button" data-dismiss="modal">
+              <span aria-hidden="true">
+                <i class="far fa-times-circle fa-3x"></i>
+              </span>
             </div>
+            <div class="imgAndClose-pic">
+              <img src="https://picsum.photos/600/600/?random=1">
+            </div>
+          </div>
+
+          <div class="cardwrap d-flex flex-column">
+            <div class="scroll">
+              <div class="topWrap">
+                <div class="food p-4">
+                  <h2>蕃茄迷你鍋</h2>
+                  <p>附白飯一碗。恕無客製化醬料，敬請見諒。</p>
+                </div>
+                <div class="selectedBgc p-4">
+                  <div class="selected d-flex justify-content-between align-items-center">
+                    <div class="selectWrap">
+                      <div class="selectedTitle">辣選擇</div>
+                      <div class="selectedTxt">
+                        <span>最多可選擇 1 個項目</span>
+                      </div>
+                    </div>
+                    <div class="circleIconDiv">
+                      <i class="fas fa-chevron-circle-down circleIcon fa-2x"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="checkboxDiv d-flex align-items-center p-4">
+                  <input type="checkbox" class="p-2" size="20">
+                  <div class="checkboxTxt p-2">加辣</div>
+                </div>
+              </div>
+              <input class="input" type="text" placeholder="新增註記(醬料多一點，不加洋蔥等)">
+              <div class="bill-txt">
+                <p>[本店免開統一發票] 本商家所提供的商品沒有含有任何依法規應揭露之肉類食材
+                  (上開肉品資訊是由我們所合作之商家合作夥伴所提供。如對上開資訊有任何疑問，請直接與商家合作夥伴聯繫)
+                </p>
+              </div>
+              <div class="addItemBgC">
+                <div class="add-group wrap justify-content-around">
+                  <div class="quantityAddWrap d-flex">
+                    <i class="fas fa-minus-circle fa-2x"></i>
+                    <div class="quantity" style="font-size: 20px;">1</div>
+                    <i class="fas fa-plus-circle fa-2x"></i>
+                  </div>
+                  <div class="addToCartWrap">
+                    <button type="button" class="btn btn-lg btn-dark active">
+                      <span class="addToCart">
+                        新增 1 項商品至訂單
+                      </span>
+                      <span class="price">
+                        $195.00
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- navbar -->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="navbar">
+          <a href="#">您專屬的推薦商品</a>
+          <a href="#">人氣精選</a>
+          <a href="#">主食</a>
+          <a href="#">單點</a>
+        </div>
+      </div>
     </div>
 
-    <!-- storeModal -->
-    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="storeModal modal-header cardModalHeader justify-content-start p-0">
-
-                    <div class="imgAndClose">
-                        <div type="button" data-dismiss="modal">
-                            <span aria-hidden="true">
-                                <i class="far fa-times-circle fa-3x"></i>
-                            </span>
-                        </div>
-                        <div class="imgAndClose-pic">
-                            <img src="https://picsum.photos/600/600/?random=1">
-                        </div>
-                    </div>
-
-                    <div class="cardwrap d-flex flex-column">
-                        <div class="scroll">
-                            <div class="topWrap">
-                                <div class="food p-4">
-                                    <h2>蕃茄迷你鍋</h2>
-                                    <p>附白飯一碗。恕無客製化醬料，敬請見諒。</p>
-                                </div>
-                                <div class="selectedBgc p-4">
-                                    <div class="selected d-flex justify-content-between align-items-center">
-                                        <div class="selectWrap">
-                                            <div class="selectedTitle">辣選擇</div>
-                                            <div class="selectedTxt">
-                                                <span>最多可選擇 1 個項目</span>
-                                            </div>
-                                        </div>
-                                        <div class="circleIconDiv">
-                                            <i class="fas fa-chevron-circle-down circleIcon fa-2x"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="checkboxDiv d-flex align-items-center p-4">
-                                    <input type="checkbox" class="p-2" size="20">
-                                    <div class="checkboxTxt p-2">加辣</div>
-                                </div>
-                            </div>
-                            <input type="text" placeholder="新增註記(醬料多一點，不加洋蔥等)">
-                            <div class="bill-txt">
-                                <p>[本店免開統一發票] 本商家所提供的商品沒有含有任何依法規應揭露之肉類食材
-                                    (上開肉品資訊是由我們所合作之商家合作夥伴所提供。如對上開資訊有任何疑問，請直接與商家合作夥伴聯繫)
-                                </p>
-                            </div>
-                            <div class="addItemBgC">
-                                <div class="add-group wrap justify-content-around">
-                                    <div class="quantityAddWrap d-flex">
-                                        <i class="fas fa-minus-circle fa-2x"></i>
-                                        <div class="quantity" style="font-size: 20px;">1</div>
-                                        <i class="fas fa-plus-circle fa-2x"></i>
-                                    </div>
-                                    <div class="addToCartWrap">
-                                        <button type="button" class="btn btn-lg btn-dark active">
-                                            <span class="addToCart">
-                                                新增 1 項商品至訂單
-                                            </span>
-                                            <span class="price">
-                                                $195.00
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- 您專屬的推薦商品 -->
+    <div class="title row">
+      <div class="col-12">
+        <div class="txt">您專屬的推薦商品</div>
+      </div>
     </div>
-
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="navbar">
-                    <a href="#">您專屬的推薦商品</a>
-                    <a href="#">人氣精選</a>
-                    <a href="#">主食</a>
-                    <a href="#">單點</a>
-                </div>
-            </div>
+    <div class="item-group row d-flex ">
+      <div class="col-12 col-lg-12 col-xl-4" data-toggle="modal" data-target="#exampleModal1">
+        <div class="card d-flex flex-row-reverse card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">蔥蔥雞便當<br>附一杯飲料。</p>$140.00
+          </div>
         </div>
-        <!-- 您專屬的推薦商品 -->
-        <div class="title row">
-            <div class="col-12">
-                <div class="txt">您專屬的推薦商品</div>
-            </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
+          </div>
         </div>
-        <div class="item-group row d-flex ">
-            <div class="col-12 col-lg-12 col-xl-4" data-toggle="modal" data-target="#exampleModal1">
-                <div class="card d-flex flex-row-reverse card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">蔥蔥雞便當<br>附一杯飲料。</p>$140.00
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">蔥蔥雞</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">蔥蔥雞</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">蔥蔥雞</p>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">蔥蔥雞</p>
+          </div>
         </div>
-        <!-- 人氣精選 -->
-        <div class="title row">
-            <div class="col-12">
-                <div class="txt">人氣精選</div>
-            </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">蔥蔥雞</p>
+          </div>
         </div>
-        <div class="item-group row d-flex">
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">蔥蔥雞便當<br>附一杯飲料。</p>$140.00
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">蔥蔥雞</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">蔥蔥雞</p>
-                    </div>
-                </div>
-            </div>
-
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">蔥蔥雞</p>
+          </div>
         </div>
-        <!-- 主食 -->
-        <div class="title row">
-            <div class="col-12">
-                <div class="txt">主食</div>
-            </div>
-        </div>
-        <div class="item-group row d-flex">
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">蔥蔥雞便當<br>附一杯飲料。</p>$140.00
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">蔥蔥雞</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 單點 -->
-        <div class="title row">
-            <div class="col-12">
-                <div class="txt">單點</div>
-            </div>
-        </div>
-        <div class="item-group row d-flex">
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">蔥蔥雞便當<br>附一杯飲料。</p>$140.00
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">蔥蔥雞</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-12 col-xl-4">
-                <div class="card card d-flex flex-row-reverse">
-                    <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+    <!-- 人氣精選 -->
+    <div class="title row">
+      <div class="col-12">
+        <div class="txt">人氣精選</div>
+      </div>
+    </div>
+    <div class="item-group row d-flex">
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">蔥蔥雞便當<br>附一杯飲料。</p>$140.00
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">蔥蔥雞</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">蔥蔥雞</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- 主食 -->
+    <div class="title row">
+      <div class="col-12">
+        <div class="txt">主食</div>
+      </div>
+    </div>
+    <div class="item-group row d-flex">
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">蔥蔥雞便當<br>附一杯飲料。</p>$140.00
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">蔥蔥雞</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 單點 -->
+    <div class="title row">
+      <div class="col-12">
+        <div class="txt">單點</div>
+      </div>
+    </div>
+    <div class="item-group row d-flex">
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">蔥蔥雞便當<br>附一杯飲料。</p>$140.00
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">蔥蔥雞</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-12 col-xl-4">
+        <div class="card card d-flex flex-row-reverse">
+          <img src="https://picsum.photos/100/100/?random=1" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">菌菇拌雞胸肉便當<br>附 1 杯飲料。小辣</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
-    </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+  </script>
 
-    <script>
-        //愛心
-        let heartSolid = document.querySelector(".heartSolid");
-        let heartEmpty = document.querySelector(".heartEmpty");
-        let heart = document.querySelector(".heart")
+  <script>
+    //愛心
+    let heartSolid = document.querySelector(".heartSolid");
+    let heartEmpty = document.querySelector(".heartEmpty");
+    let heart = document.querySelector(".heart")
 
-        heart.onclick = function () {
-            if ($('.heartEmpty').css('display') === "block") {
-                heartEmpty.style.display = "none";
-                heartSolid.style.display = "block";
-            } else {
-                heartEmpty.style.display = "block";
-                heartSolid.style.display = "none";
-            }
-        }
-        //下拉選單
-        $('.circleIcon').on('click', function () {
-            if ($(".checkboxDiv").hasClass('d-flex')) {
-                $('.checkboxDiv').removeClass('d-flex');
-                $('.checkboxDiv').addClass('d-none')
+    heart.onclick = function () {
+      if ($('.heartEmpty').css('display') === "block") {
+        heartEmpty.style.display = "none";
+        heartSolid.style.display = "block";
+      } else {
+        heartEmpty.style.display = "block";
+        heartSolid.style.display = "none";
+      }
+    }
+    //下拉選單
+    $('.circleIcon').on('click', function () {
+      if ($(".checkboxDiv").hasClass('d-flex')) {
+        $('.checkboxDiv').removeClass('d-flex');
+        $('.checkboxDiv').addClass('d-none')
 
-                $('.circleIcon').removeClass('fa-chevron-circle-down');
-                $('.circleIcon').addClass('fa-chevron-circle-up');
+        $('.circleIcon').removeClass('fa-chevron-circle-down');
+        $('.circleIcon').addClass('fa-chevron-circle-up');
 
-            } else {
-                $('.checkboxDiv').addClass('d-flex');
-                $('.checkboxDiv').removeClass('d-none');
+      } else {
+        $('.checkboxDiv').addClass('d-flex');
+        $('.checkboxDiv').removeClass('d-none');
 
-                $('.circleIcon').removeClass('fa-chevron-circle-up');
-                $('.circleIcon').addClass('fa-chevron-circle-down');
-            }
+        $('.circleIcon').removeClass('fa-chevron-circle-up');
+        $('.circleIcon').addClass('fa-chevron-circle-down');
+      }
+    });
+
+
+    //获取要定位元素距离浏览器顶部的距离 $('.navbar').offset().top
+    //$('.navbar').offset().top-上下padding(navbar)-header
+    //324-16=308
+    //308-44=264
+    var navH = 264;
+    // console.log(navH);
+
+    //滚动条事件
+    $(window).scroll(function () {
+      //获取滚动条的滑动距离314
+      var scroH = $(this).scrollTop();
+      // console.log(scroH);
+      //滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离;就定;反之就不固定
+      if (scroH >= navH) {
+        $('.navbar').css({
+          'position': 'fixed',
+          'top': 44,
+          'left': 0
         });
-    </script>
+      } else if (scroH < navH) {
+        $('.navbar').css({
+          'position': 'static'
+        });
+      }
+    })
+
+    //获取要定位元素距离浏览器顶部的距离 $('.navbar').offset().top
+    //$('.navbar').offset().top-上下padding(navbar)-header
+    //324-16=308
+    //308-44=264
+    var navH = 264;
+    // console.log(navH);
+
+    //滚动条事件
+    $(window).scroll(function () {
+      //获取滚动条的滑动距离314
+      var scroH = $(this).scrollTop();
+      // console.log(scroH);
+      //滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离;就定;反之就不固定
+      if (scroH >= navH) {
+        $('.navbar').css({
+          'position': 'fixed',
+          'top': 44,
+          'left': 0
+        });
+      } else if (scroH < navH) {
+        $('.navbar').css({
+          'position': 'static'
+        });
+      }
+    })
+  </script>
 
 
 </body>
