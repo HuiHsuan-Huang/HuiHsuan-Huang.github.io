@@ -10,11 +10,12 @@
   <!-- <link rel="stylesheet" href="style2.css"> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
   <title>store</title>
 </head>
 <style>
-    /* 手機 */
-  @media screen and (max-width:992px) {
+/* 手機 */
+@media screen and (max-width:992px) {
     .modal-header {
         display: block;
     }
@@ -67,12 +68,21 @@
 }
 
 /* top */
+html{
+    scroll-behavior: smooth;
+}
+.layout{
+    background-color:red;
+    height: 96px;
+}
 .top {
     background-color: rgb(238, 247, 237);
     width: 100%;
-    position: fixed;
+    /* position: fixed; */
     text-align: center;
     z-index: 2;    
+    position: sticky;
+    top:0;
 }
 
 .discount {
@@ -92,7 +102,7 @@
 
 /* banner */
 .banner {
-    margin-top: 44px;
+    /* margin-top: 44px; */
     width: 100%;
     position: relative;
 
@@ -303,11 +313,15 @@
     justify-content: center !important;
 }
 /* navbar */
+.navMove{
+    position: sticky;
+    top: 44px;
+    z-index: 4;
+}
 .navbar a {
     color: black;
     padding: 0 10px;
-    text-decoration: none;
-    
+    text-decoration: none;   
 }
 
 .navbar {
@@ -316,15 +330,16 @@
     border-bottom: 2px solid #E2E2E2;
     z-index: 3;
     width: 100%;
-    height: 78px;
-    /* z-index: 3; 
-    position: fixed;
-    top: 40px; 
-    left: 0px;
-    width: 100%; */
+    height: 78px; 
 }
 
 /* 您專屬的推薦商品 */
+:target{
+    content:'';
+    display: block; 
+    padding-top: 122px;
+    margin-top: -122px;
+}
 .title {
     margin-left: 0;
     margin-right: 0;
@@ -340,11 +355,7 @@
 
 .title .txt {
     font-size: 23px;
-    font-weight: bold;   
-    /* padding-top: 40px;
-    padding-bottom: 8px;
-    padding-left: 0;  */
-    /* line-height: 1.5; */
+    font-weight: bold;     
 }
 
 .card {
@@ -449,11 +460,13 @@
   margin: 10px;
 }
 </style>
+
 <body>
+  <div class="layout"></div>
   <!-- top -->
-  <div class="container-fluid">
+  <div class="top container-fluid">
     <div class="discount row">
-      <div class="top col-12">
+      <div class="col-12">
         <a href="#">使用優響方案可享$0外送費</a>
       </div>
     </div>
@@ -492,11 +505,7 @@
             <div class="modal-header">
 
               <h3 class="modal-title" id="exampleModalLabel">在11:30
-                AM開始營業<br><span>這家餐廳目前沒有營業，但您可提前預約訂單。</span></h3>
-
-              <!-- <button type="button-time" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button> -->
+                AM開始營業<br><span>這家餐廳目前沒有營業，但您可提前預約訂單。</span></h3>            
             </div>
             <!-- 下拉選單 -->
             <div class="modal-body">
@@ -698,14 +707,14 @@
 
 
   <!-- navbar -->
-  <div class="container">
-    <div class="row">
+  <div class="container position-relative">
+    <div class="navMove row">
       <div class="col-12">
         <div class="navbar">
-          <a href="#">您專屬的推薦商品</a>
-          <a href="#">人氣精選</a>
-          <a href="#">主食</a>
-          <a href="#">單點</a>
+          <a href="#titleOne">您專屬的推薦商品</a>
+          <a href="#titleTwo">人氣精選</a>
+          <a href="#titleThree">主食</a>
+          <a href="#titleFour">單點</a>
         </div>
       </div>
     </div>
@@ -713,7 +722,7 @@
     <!-- 您專屬的推薦商品 -->
     <div class="title row">
       <div class="col-12">
-        <div class="txt">您專屬的推薦商品</div>
+        <div class="txt" id="titleOne">您專屬的推薦商品</div>
       </div>
     </div>
     <div class="item-group row d-flex ">
@@ -761,7 +770,7 @@
     <!-- 人氣精選 -->
     <div class="title row">
       <div class="col-12">
-        <div class="txt">人氣精選</div>
+        <div class="txt" id="titleTwo">人氣精選</div>
       </div>
     </div>
     <div class="item-group row d-flex">
@@ -802,7 +811,7 @@
     <!-- 主食 -->
     <div class="title row">
       <div class="col-12">
-        <div class="txt">主食</div>
+        <div class="txt" id="titleThree">主食</div>
       </div>
     </div>
     <div class="item-group row d-flex">
@@ -834,7 +843,7 @@
     <!-- 單點 -->
     <div class="title row">
       <div class="col-12">
-        <div class="txt">單點</div>
+        <div class="txt" id="titleFour">單點</div>
       </div>
     </div>
     <div class="item-group row d-flex">
@@ -942,57 +951,63 @@
     });
 
 
-    //获取要定位元素距离浏览器顶部的距离 $('.navbar').offset().top
-    //$('.navbar').offset().top-上下padding(navbar)-header
-    //324-16=308
-    //308-44=264
-    var navH = 264;
-    // console.log(navH);
-
-    //滚动条事件
-    $(window).scroll(function () {
-      //获取滚动条的滑动距离314
-      var scroH = $(this).scrollTop();
-      // console.log(scroH);
-      //滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离;就定;反之就不固定
-      if (scroH >= navH) {
-        $('.navbar').css({
-          'position': 'fixed',
-          'top': 44,
-          'left': 0
-        });
-      } else if (scroH < navH) {
-        $('.navbar').css({
-          'position': 'static'
-        });
-      }
-    })
+   
 
     //获取要定位元素距离浏览器顶部的距离 $('.navbar').offset().top
     //$('.navbar').offset().top-上下padding(navbar)-header
     //324-16=308
     //308-44=264
-    var navH = 264;
-    // console.log(navH);
+     // console.log(navH);
+    // var navH = 264;
+   
 
     //滚动条事件
-    $(window).scroll(function () {
-      //获取滚动条的滑动距离314
-      var scroH = $(this).scrollTop();
-      // console.log(scroH);
+    //获取滚动条的滑动距离314
+     // console.log(scroH);
       //滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离;就定;反之就不固定
-      if (scroH >= navH) {
-        $('.navbar').css({
-          'position': 'fixed',
-          'top': 44,
-          'left': 0
-        });
-      } else if (scroH < navH) {
-        $('.navbar').css({
-          'position': 'static'
-        });
-      }
-    })
+    // $(window).scroll(function () {
+      
+    //   var scroH = $(this).scrollTop();
+     
+    //   if (scroH >= navH) {
+    //     $('.navbar').css({
+    //       'position': 'fixed',
+    //       'top': 44,
+    //       'left': 0
+    //     });
+    //   } else if (scroH < navH) {
+    //     $('.navbar').css({
+    //       'position': 'static'
+    //     });
+    //   }
+    // })
+
+
+
+
+
+
+
+
+    // $('.navscroll').on('click', function () { //繫結點選事件
+    //   debugger;
+    //   let haha = $('#haha').offset().top; //獲取對應元素劇情螢幕頂部的距離
+    //   console.log(haha);
+    //   $('html,body').animate({
+    //     scrollTop: haha
+    //   }, 800); //動畫出爐
+    // });
+
+
+    // $('.navscroll').click(function () {
+    //   debugger;
+    //   // let haha = $('#haha').offset().top;
+    //   // window.scrollTo(0,haha-122);
+
+    //   var target_top = $("#haha").offset().top;
+
+    //   $("html,body").scrollTop(target_top);
+    // });
   </script>
 
 
