@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,12 +9,12 @@
   <!-- <link rel="stylesheet" href="style2.css"> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-  <link rel="stylesheet" href="store.css">
+  <link rel="stylesheet" href="abc.css">
   <title>store</title>
 </head>
 <style>
-/* 手機 */
-@media screen and (max-width:992px) {
+  /* 手機 */
+ @media screen and (max-width:992px) {
     .modal-header {
         display: block;
     }
@@ -185,7 +184,9 @@ html{
     position: absolute;
     top: 0px;
 }
-
+.modal-content{
+    border-radius: 0;
+}
 /* 下拉選單 */
 .form-select {
     width: 100%;
@@ -196,8 +197,7 @@ html{
 }
 
 .modal-footer button {
-    width: 100%;
-    border-radius: none;
+    width: 100%; 
 }
 
 /* 地址 */
@@ -286,11 +286,13 @@ html{
     width: 100%;
 }
 
-.imgClose img {
+.imgClosePic img {
     display: block;
-    width: 50%;
+    width: 50%;  
 }
-
+.dataModalContent{
+    border: none;
+}
 .imgClose .fa-times-circle {
     position: absolute;
     top: 10px;
@@ -300,22 +302,19 @@ html{
 }
 
 /* storeModal */
-.carousel-item img {
-    /* height: 200px; */
-}
-
 .card img {
     width: 88px !important;
     height: 120px;
 }
-
 .add-group {
     display: flex;
     text-align: center;
 }
-
 .quantityAddWrap {
     justify-content: center !important;
+}
+.storeModalContent{
+    border: none;
 }
 /* navbar */
 .navMove{
@@ -404,10 +403,10 @@ html{
     width: 100%;
     /* height: 500px;   */
 }
-.imgAndClose img {
+.imgAndClose-pic img {
     display: block;
     width: 100%;
-    height: 500px;
+    height: 500px; 
 }
 
 .imgAndClose .fa-times-circle {
@@ -422,13 +421,13 @@ html{
     background: rgb(246, 246, 246);
 }
 
-.checkboxDiv input {
+/* .checkboxDiv input {
     width: 20px;
     height: 20px;
-}
+} */
 
 .addItemBgC {
-    padding: 10px 0;
+    padding: 10px 0;   
 }
 
 .addItemBgC i {
@@ -465,7 +464,7 @@ html{
 .scroll {
     overflow: auto;
     height: 500px;
-    display: block;
+    display: block;    
 }
 
 .add-group {
@@ -480,7 +479,6 @@ html{
   margin: 10px;
 }
 </style>
-
 <body>
   <div class="layout"></div>
   <!-- top -->
@@ -491,7 +489,6 @@ html{
       </div>
     </div>
   </div>
-
   <!-- banner -->
   <div class="banner">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
@@ -516,7 +513,7 @@ html{
       <div class="timeModal modal fade" id="exampleModal" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
+          <div class="timeModalContent modal-content">
             <div class="btn-time btnTimeClose">
               <button type="button-time" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -526,10 +523,6 @@ html{
 
               <h3 class="modal-title" id="exampleModalLabel">在11:30
                 AM開始營業<br><span>這家餐廳目前沒有營業，但您可提前預約訂單。</span></h3>
-
-              <!-- <button type="button-time" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button> -->
             </div>
             <!-- 下拉選單 -->
             <div class="modal-body">
@@ -539,7 +532,6 @@ html{
                 <option value="2">8月30日 週一</option>
                 <option value="3">8月31日 週二 </option>
               </select>
-
               <select class="form-select" aria-label="select example">
                 <option selected>今天，8月26日 週四</option>
                 <option value="1">明天，8月27日 週五</option>
@@ -561,7 +553,6 @@ html{
       </span>
     </div>
   </div>
-
   <!--地址-->
   <div class="wrap">
     <div class="address">
@@ -570,21 +561,18 @@ html{
           href="#">顯示更多</a></p>
     </div>
   </div>
-
   <!-- dataModal -->
   <div class="modal fade" id="more" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
+      <div class="dataModalContent modal-content">
         <div class="dataModal-header">
-
           <div class="imgClose">
             <div type="button" data-dismiss="modal">
               <span aria-hidden="true">
                 <i class="far fa-times-circle fa-3x"></i>
               </span>
             </div>
-
-            <div class="imgClose-pic">
+            <div class="imgClosePic">
               <img src="https://picsum.photos/458/192/?random=1">
             </div>
           </div>
@@ -595,7 +583,6 @@ html{
             <span class="p-3">健康飲食 • $</span>
           </div>
           <div class="line"></div>
-
           <div class="map">
             <div class="marker p-3">
               <i class="fas fa-map-marker-alt"></i>
@@ -608,7 +595,6 @@ html{
             </div>
           </div>
           <div class="line"></div>
-
           <div class="time">
             <div class="clock p-3">
               <i class="fas fa-clock"></i>
@@ -619,7 +605,6 @@ html{
             </div>
           </div>
           <div class="line"></div>
-
           <div class="discounts">
             <div class="ticket p-3">
               <img src="https://dkl8of78aprwd.cloudfront.net/ticket@3x.png" alt="">
@@ -632,7 +617,6 @@ html{
             </div>
           </div>
           <div class="line"></div>
-
           <div class="score">
             <div class="star p-3">
               <i class="fas fa-star"></i>
@@ -641,11 +625,9 @@ html{
             <div class="space p-3"></div>
           </div>
           <div class="line"></div>
-
           <div class="bill">
             <p>[本店開立紙本發票]</p>
           </div>
-
         </div>
         <!-- <div class="moreModal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -658,9 +640,8 @@ html{
   <!-- storeModal -->
   <div class="modal fade " id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
-      <div class="modal-content">
+      <div class="storeModalContent modal-content">
         <div class="storeModal modal-header cardModalHeader justify-content-start p-0">
-
           <div class="imgAndClose">
             <div type="button" data-dismiss="modal">
               <span aria-hidden="true">
@@ -671,7 +652,6 @@ html{
               <img src="https://picsum.photos/600/600/?random=1">
             </div>
           </div>
-
           <div class="cardwrap d-flex flex-column">
             <div class="scroll">
               <div class="topWrap">
@@ -693,8 +673,9 @@ html{
                   </div>
                 </div>
                 <div class="checkboxDiv d-flex align-items-center p-4">
-                  <input type="checkbox" class="p-2" size="20">
-                  <div class="checkboxTxt p-2">加辣</div>
+                  <label for="checkbox">
+                    <input id="checkbox" type="checkbox">加辣
+                  </label>
                 </div>
               </div>
               <input class="input" type="text" placeholder="新增註記(醬料多一點，不加洋蔥等)">
@@ -728,8 +709,6 @@ html{
       </div>
     </div>
   </div>
-
-
   <!-- navbar -->
   <div class="container position-relative">
     <div class="navMove row">
@@ -745,7 +724,6 @@ html{
         </div>
       </div>
     </div>
-
     <!-- 您專屬的推薦商品 -->
     <div class="title row">
       <div class="col-12">
@@ -833,7 +811,6 @@ html{
           </div>
         </div>
       </div>
-
     </div>
     <!-- 主食 -->
     <div class="title row">
@@ -978,24 +955,24 @@ html{
     });
 
 
-   
+
 
     //获取要定位元素距离浏览器顶部的距离 $('.navbar').offset().top
     //$('.navbar').offset().top-上下padding(navbar)-header
     //324-16=308
     //308-44=264
-     // console.log(navH);
+    // console.log(navH);
     // var navH = 264;
-   
+
 
     //滚动条事件
     //获取滚动条的滑动距离314
-     // console.log(scroH);
-      //滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离;就定;反之就不固定
+    // console.log(scroH);
+    //滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离;就定;反之就不固定
     // $(window).scroll(function () {
-      
+
     //   var scroH = $(this).scrollTop();
-     
+
     //   if (scroH >= navH) {
     //     $('.navbar').css({
     //       'position': 'fixed',
