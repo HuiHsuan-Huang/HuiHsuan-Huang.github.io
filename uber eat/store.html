@@ -10,12 +10,12 @@
   <!-- <link rel="stylesheet" href="style2.css"> -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="store.css">
   <title>store</title>
 </head>
 <style>
- /* 手機 */
- @media screen and (max-width:992px) {
+/* 手機 */
+@media screen and (max-width:992px) {
     .modal-header {
         display: block;
     }
@@ -107,9 +107,14 @@ html{
     position: relative;
 
 }
-
+.carousel-item{
+    width: 100%;
+    height: 256px;
+}
 .carousel-item img {
     width: 100%;
+    height: 100%;
+    object-fit:cover;
 }
 
 .text {
@@ -296,7 +301,7 @@ html{
 
 /* storeModal */
 .carousel-item img {
-    height: 200px;
+    /* height: 200px; */
 }
 
 .card img {
@@ -455,7 +460,7 @@ html{
     background: rgb(246, 246, 246);
 }
 .bill-txt p{
-  padding: 24px;
+  padding: 10px;
 }
 .scroll {
     overflow: auto;
@@ -492,7 +497,7 @@ html{
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="https://picsum.photos/1500/600/?random=1" alt="First slide">
+          <img class="d-block" src="https://picsum.photos/1500/1500/?random=1" alt="First slide">
         </div>
       </div>
     </div>
@@ -510,7 +515,7 @@ html{
       <!-- timeModal -->
       <div class="timeModal modal fade" id="exampleModal" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="btn-time btnTimeClose">
               <button type="button-time" class="close" data-dismiss="modal" aria-label="Close">
@@ -568,7 +573,7 @@ html{
 
   <!-- dataModal -->
   <div class="modal fade" id="more" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="dataModal-header">
 
@@ -651,8 +656,8 @@ html{
   </div>
 
   <!-- storeModal -->
-  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+  <div class="modal fade " id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
         <div class="storeModal modal-header cardModalHeader justify-content-start p-0">
 
