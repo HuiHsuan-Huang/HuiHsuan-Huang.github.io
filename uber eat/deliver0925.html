@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="deliver.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>deliver</title>
+</head>
+<style>
+.header {
+    background-color: black;
+    height: 64px;
+}
+
+/* 圖文 */
+.container {
+    max-width: 1920px;
+}
+
+.captionItem {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.caption h4 {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.caption p {
+    font-size: 16px;
+}
+
+.caption {
+    padding: 24px 24px 0
+}
+
+.caption h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.captionPic {
+    width: 100%;
+    height: 211px;
+}
+
+.captionPic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 註冊 */
+.accordion{
+    width: 100%;
+}
+.fileOne,.fileTwo,.fileThree,.fileFour,.fileFive{
+    padding:15px 30px;
+}
+.fileTxt{
+    color: black;
+}
+.signInItem .signIn {
+    margin: 28px 0;
+}
+.description {
+    font-size: 12px;
+    margin: 24px 0;
+}
+
+.deliverBtnAndSignIn .btn {
+    padding: 14px 25px;
+}
+.deliverBtnAndSignIn{
+    margin-bottom: 10px;
+}
+
+.deliverSignIn {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.deliverSignIn span {
+    margin-right: 4px;
+}
+@media screen and (min-width: 768px) and (max-width:991px) {
+    .captionPic {
+        width: 100%;
+        height: 500px;
+    }
+
+    .deliverBtnAndSignIn {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 10px;
+    }
+
+    .deliverSignIn {
+        margin-left: 15px;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    .caption h1 {
+        font-size: 52px;
+    }
+
+    .caption {
+        padding: 64px;
+    }
+
+    .captionPic {
+        width: 80%;
+        height: 50%;
+        margin: auto;
+    }
+
+    .captionPic img {
+        width: 100%;
+        height: 500px;
+    }
+
+    .signInItem {
+        padding: 73px;
+    }
+
+    .personalInfo {
+        line-height: 33px;
+    }
+
+    .deliverBtnAndSignIn {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .deliverSignIn {
+        margin-left: 15px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .captionPic img {
+        height: 350px;
+    }
+}
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="captionItem col-12 col-xl-5">
+                <div class="caption">
+                    <h1>Deliver with Uber in Taiwan</h1>
+                    <h4>No boss. Flexible schedule. Quick pay.</h4>
+                    <p>Now you can earn cash by delivering the Uber Eats food orders that people crave—all while
+                        exploring your city.</p>
+                </div>
+                <div class="captionPic">
+                    <img src="deliverRegister.png" alt="圖片">
+                </div>
+            </div>
+            <div class="space col-xl-1"></div>
+            <form class="signInItem col-12 col-xl-6">
+                <div class="row">
+                    <div class="signIn col-12">
+                        <h3>立即註冊</h3>
+                        <p>須執行以下步驟來完成帳戶設定</p>
+                    </div>
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="fileTxt btn btn-link btn-block text-left" type="button"
+                                        data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                        aria-controls="collapseOne">
+                                        駕照+身分證(需拍於同一個畫面)
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordionExample">
+                                <div class="fileOne">
+                                    <label for=""></label>
+                                    <input type="file">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <button class="fileTxt btn btn-link btn-block text-left collapsed" type="button"
+                                        data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                        aria-controls="collapseTwo">
+                                        機車強制險(僅接受電子檔或正本)
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordionExample">
+                                <div class="fileTwo">
+                                    <label for=""></label>
+                                    <input type="file">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h2 class="mb-0">
+                                    <button class="fileTxt btn btn-link btn-block text-left collapsed" type="button"
+                                        data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        機車行照
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordionExample">
+                                <div class="fileThree">
+                                    <label for=""></label>
+                                    <input type="file">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFour">
+                                <h2 class="mb-0">
+                                    <button class="fileTxt btn btn-link btn-block text-left collapsed" type="button"
+                                        data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        個人大頭照
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                data-parent="#accordionExample">
+                                <div class="fileFour">
+                                    <label for=""></label>
+                                    <input type="file">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingFive">
+                                <h2 class="mb-0">
+                                    <button class="fileTxt btn btn-link btn-block text-left collapsed" type="button"
+                                        data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+                                        aria-controls="collapseFive">
+                                        良民證
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                data-parent="#accordionExample">
+                                <div class="fileFive">
+                                    <label for=""></label>
+                                    <input type="file">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="description">
+                    <p>繼續操作即表示本人同意 Uber 的使用條款，並確認已閱讀隱私政策。<br><br>
+                        我亦同意 Uber 或其代表可透過我提供的電子郵件、電話、或簡訊與我聯絡 (包含透過自動方式)，而上述聯絡方式可包含銷售用途。
+                    </p>
+                </div>
+                <div class="deliverBtnAndSignIn">
+                    <button type="button" class="btn btn-dark">註冊成為合作外送夥伴</button>
+                    <div class="deliverSignIn">
+                        <span>已經有帳戶了嗎？</span>
+                        <a href="#">登入</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
